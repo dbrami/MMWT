@@ -1,0 +1,997 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="devsite">
+  
+
+  <head>
+    <meta charset="utf-8" />
+    <script>(function(){function d(a){this.t={};this.tick=function(a,c,b){var d=void 0!=b?b:(new Date).getTime();this.t[a]=[d,c];if(void 0==b)try{window.console.timeStamp("CSI/"+a)}catch(e){}};this.tick("start",null,a)}var a;window.performance&&(a=window.performance.timing);var f=a?new d(a.responseStart):new d;window.jstiming={Timer:d,load:f};if(a){var c=a.navigationStart,e=a.responseStart;0<c&&e>=c&&(window.jstiming.srt=e-c)}if(a){var b=window.jstiming.load;0<c&&e>=c&&(b.tick("_wtsrt",void 0,c),b.tick("wtsrt_",
+"_wtsrt",e),b.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),b&&0<c&&(b.tick("_tbnd",void 0,window.chrome.csi().startE),b.tick("tbnd_","_tbnd",c))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,b&&0<c&&(b.tick("_tbnd",void 0,window.external.startE),b.tick("tbnd_","_tbnd",c))),a&&(window.jstiming.pt=a)}catch(g){}})();window.gettext=function(d){return d};window.interpolate=function(d,a){return d.replace(/%s/g,function(){return String(a.shift())})};
+</script>
+    
+      <link rel="stylesheet" type="text/css" href="/_static/f53fcd3e33/css/slim/common.css" />
+      <link rel="stylesheet" type="text/css" href="/_static/f53fcd3e33/css/slim/maia.css" />
+      <link rel="stylesheet" type="text/css" href="/_static/f53fcd3e33/css/slim/developers-home.css" />
+      <link rel="stylesheet" type="text/css" href="/_static/f53fcd3e33/css/slim/developers-detail.css" />
+      <link rel="stylesheet" type="text/css" href="/_static/f53fcd3e33/css/slim/developers-products.css" />
+      <link href='//fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic,500,500italic,300,300italic' rel='stylesheet' type='text/css'>
+    
+    
+      
+        <link rel="stylesheet" type="text/css" href="/_static/f53fcd3e33/css/slim-docs.css" />
+      
+      
+      <link rel="stylesheet" type="text/css" id="screen-foot" data-href="/_static/f53fcd3e33/css/screen-foot.css" />
+    
+    <link rel="shortcut icon" href="/_static/f53fcd3e33/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/_static/f53fcd3e33/images/apple-touch-icon.png">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    
+    
+    
+      <link rel="search" type="application/opensearchdescription+xml" title="Google Developers" href="/search/opensearch.xml">
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="/_static/f53fcd3e33/js/html5shim/html5.js"></script>
+    <![endif]-->
+
+    
+  <script type="text/javascript">
+    var contentTimer = new window.jstiming.Timer();
+
+    var ___gcfg = ___gcfg || {};
+    ___gcfg.lang = 'en';
+  </script>
+  
+  <title>Simple Map - Google Maps JavaScript API v3 &mdash; Google Developers</title>
+  
+  
+  
+    
+      <input class="project-google-analytics-id" type="hidden"
+             value="UA-42966870-1" />
+    
+  
+
+  
+
+  
+    
+    
+    
+    
+<link href="/maps/documentation/local_extensions.css" rel="stylesheet" type="text/css" />
+<link href="/maps/styles/common.css" rel="stylesheet" type="text/css" />
+
+  
+
+
+    
+
+    <style>
+    
+    </style>
+    
+  </head>
+  <body class=" slim   two-column docs normal-width">
+  <div class="maia-max">
+  
+
+    
+    <div id="sandbar">
+      
+      
+        
+          
+
+
+
+
+
+<div id="maia-header" class="maia-header">
+  <header id="googlebar">
+    <div id="logo-wrapper">
+      <a id="logo" href="/">
+        <img src="/_static/f53fcd3e33/images/developers-logo.svg" alt="Google"/>
+      </a>
+      <script>
+      if (navigator.userAgent.match(/msie/i) && navigator.appVersion.indexOf['8'] ==0) {
+        $('#gc-logo img').attr({src:'/_static/f53fcd3e33/images/developers-logo.png'});
+      }
+      </script>
+    </div>
+
+    <div id="search-wrapper" class="head-sec search-wrapper2">
+      <form class="search" action="/search/results" method="GET">
+        <div id="searchbox" class="searchbox">
+           
+           <input type="text" name="q" class="q" id="q" value="" placeholder='Search' autocomplete="off" />
+        </div>
+        <button id="search-button" class="button button-blue big">
+          <img src="/_static/images/v2/search.png" alt="Search">
+        </button>
+        
+          <input type="hidden" name="p" id="search_project" value="/maps/documentation/javascript" data-project-name="Google Maps JavaScript API v3" data-project-path="/maps/documentation/javascript" data-query-match=""/>
+        
+      </form>
+    </div>
+
+    <div id="social-wrapper" class="social">
+      
+      <span class="signed-in">
+        <div>
+          <a class"email right" href="https://plus.google.com/me">tommaso.brugna@gmail.com</a>
+          <a href="https://www.google.com/accounts/Logout?continue=https://developers.google.com/maps/documentation/javascript/examples/map-simple&amp;service=ahsid">Sign out</a>
+        </div>
+        <img class="avatar right" src="https://lh3.googleusercontent.com/-ZkkLTrUNhpk/AAAAAAAAAAI/AAAAAAAAAEg/KfURiWm6Je0/photo.jpg?sz=40"/>
+      </span>
+      
+    </div>
+  </header>
+</div>
+
+<script>
+  (function() { var h,s=window.devsite||{};window.devsite=s;var Xa=Xa||{};s.location=window.location;s.reloadWindow=function(){s.location.reload()};s.confirm=function(a){return window.confirm.apply(window,arguments)};s.alert=function(a){return window.alert.apply(window,arguments)};s.setTimeout=function(a,b){return window.setTimeout.apply(window,arguments)};s.clearTimeout=function(a){window.clearTimeout.apply(window,arguments)};s.setInterval=function(a,b){return window.setInterval.apply(window,arguments)};
+s.clearInterval=function(a){window.clearInterval.apply(window,arguments)};s.addEventListener=function(a,b,c){(window.addEventListener||window.attachEvent)(a,b,c)};s.inProd=function(){return Boolean(s.location.hostname.match(/\.google\.com$/)&&!s.location.hostname.match(/\.corp\.google\.com$/))};s.openWindow=window.open;s.devsite=s.devsite||{};s.devsite.HOSTNAME=s.inProd()?"//developers.google.com":"";
+s.devsite.dialogConfig={autoOpen:!1,modal:!0,show:"fade",dialogClass:"msgDialog",closeText:"",resizable:!1,draggable:!1,zIndex:9999};s.KD_FADE_LONG=218;s.KD_FADE_SHORT=130;s.permanentUrl=s.permanentUrl||{};s.permanentUrl.Widget=function(a){this.parentContainer_=a;this.addButton()};h=s.permanentUrl.Widget.prototype;h.addButton=function(){this.buttonContainer_=$("<div />").addClass("permanent-url-button");var a=$("<div />").addClass("permanent-url-icon");this.buttonContainer_.append(a);this.setButtonEvents_();this.parentContainer_.append(this.buttonContainer_)};
+h.setButtonEvents_=function(){var a=this;this.buttonContainer_.bind("click",function(b){b.stopPropagation();a.popupContainer_?a.popupContainer_.toggle():(a.addPopUp(),a.setPopupTextBox(),a.popupContainer_.show());a.popupContainer_.find("input").select()});$("body").bind("click",function(){a.hidePopUp()})};
+h.addPopUp=function(){this.popupContainer_=$("<div />").addClass("permanent-url-popup");this.popUpTextBox_=$("<input />");this.popUpTextBox_.click(function(a){a.stopPropagation();this.focus();this.select()});this.popupContainer_.append(this.popUpTextBox_);this.parentContainer_.append(this.popupContainer_);var a=this.buttonContainer_.outerHeight(),b=this.buttonContainer_.outerWidth(),a=this.buttonContainer_.offset().top+a,b=this.buttonContainer_.offset().left-this.popupContainer_.outerWidth()+b;this.popupContainer_.offset({top:a,
+left:b});this.popupContainer_.hide()};h.hidePopUp=function(){this.popupContainer_&&this.popupContainer_.hide()};h.setPermanentUrl=function(a){this.permanentUrl_=s.location.host+s.location.pathname+a.replace(/\s+/g,"+")};h.getPermanentUrl=function(){return this.permanentUrl_};h.setPopupTextBox=function(){this.popUpTextBox_&&this.popUpTextBox_.length&&this.popUpTextBox_.attr("value",this.permanentUrl_)};s.tag=s.tag||{};s.tag.Widget=s.tag.Widget||{};var Fb=function(a){return a};window.gettext=window.gettext||Fb;s.tag.Widget=function(a,b,c,d,e){this.module_=c;this.modelClass_=d;this.categoryTagName_=b;this.parentContainer_=$("#tag-component");this.optHidePermalink_=e;this.container_=this.buildBar();this.filters_=[];this.OTHER_CATEGORY_NAME_="others";this.selectedTabIndex_=0;this.init()};h=s.tag.Widget.prototype;
+h.init=function(){$("#tag-component").bind("update_tags",$.proxy(this,"handleClickedTag"));this.parentContainer_.append(this.container_);this.updateFilters("",0)};
+h.updateFilters=function(a,b,c){var d="/tags/filters",e="";a&&(e=a.join(","));$("#notification").show();$.post(d,{module:this.module_,entity:this.modelClass_,filters:e},$.proxy(function(d){var e=this;if(d.success&&(e.filters_=d.result1,e.container_.show(),b)){d=e.buildFilterList(a);$("#filter-options").html()&&$("#filter-options").remove();e.container_.append(d);this.adjustHeight_();for(var r in a)e.updateSelectedTagsBar(a[r]);$("#notification").hide();e.optHidePermalink_||(e.permanentUrl_.setPermanentUrl(a&&
+a.length?"#tags="+a.join(","):""),e.permanentUrl_.setPopupTextBox(),a&&a.length?(e.permanentUrlContainer.show(),e.clearButton_.show()):e.permanentUrlContainer.hide(),c&&this.toggleButton_.click());$("#filter-options").removeClass("filter-option-click-disabled");$("#selected-tags").removeClass("filter-option-click-disabled")}},this))};
+h.buildBar=function(){var a=$("<div />").addClass("filter-bar filter-bar-fixed").attr({id:"filter-bar"});this.toggleButton_=$("<div/>").text("Add a Filter").attr("class","button button-blue toggle-button");this.clearButton_=$("<div/>").text("Clear all Filters").attr("class","button clear-button").hide();this.header_right=$("<div />").addClass("header-right").addClass("float-right");this.optHidePermalink_||(this.permanentUrlContainer=$("<div />").addClass("permanent-url-container"),this.header_right.append(this.permanentUrlContainer),
+this.permanentUrl_=new s.permanentUrl.Widget(this.permanentUrlContainer),this.permanentUrlContainer.hide());this.header_right.append(this.clearButton_).append(this.toggleButton_);this.currentFilterList=$("<div />").addClass("header-element current-filters");this.resultsCounter=$("<div />").addClass("header-element results-counter").attr("id","result-counter");this.header_left=$("<div />").addClass("header-left");this.header_left.append(this.currentFilterList).append(this.resultsCounter);this.selectedTags=
+$("<div />").addClass("header-element").attr("id","selected-tags");this.selectedTags.append($("<span />").text("Selected Filters:").attr("class","tag-text"));this.header_left.append(this.selectedTags);var b=this;this.toggleButton_.click(function(){if($("#filter-options").html())"none"==$("#filter-options").css("display")?(a=$("#filter-options").height(),$("#filter-options").css("height",0),$("#filter-options").show(),$("#filter-options").animate({height:a},"slow"),b.toggleButton_.text("Hide Filters")):
+($("#filter-options").height(),$("#filter-options").hide(),b.toggleButton_.text("Add a Filter"));else{a=b.buildFilterList();b.container_.append(a);b.adjustHeight_();var a=$("#filter-options").height();$("#filter-options").css("height",0);$("#filter-options").animate({height:a},"slow");b.toggleButton_.text("Hide Filters")}});this.clearButton_.click(function(){b.updateFilters("",1,$("#filter-options").is(":hidden"));$("#tag-component").trigger("tag_changed",{tags:[]});$(".selected-tag").parent().remove();
+$("#selected-tags").css("display","none");b.clearButton_.hide()});a.append(this.header_right);a.append(this.header_left);a.hide();return a};
+h.buildFilterList=function(a){var b=this.filters_,c=$("<div />").addClass("filter-list").attr("id","filter-options"),d=$("<div>Filter By:</div>").attr("class","tag-text");c.append(d);a=a||[];var e=$("<div />").attr("id","vtab"),g=$("<ul></ul>");e.append(g);var f=this.getSortedCategoryTabs_(b),r;for(r in f){var m=f[r],J=$.trim(m);g.append($("<li>").text(J));for(var J=$('<div id="cat-div" style="display: none;">'),m=b[m],H=this.getSortedTags_(m),oa=0;oa<H.length;oa++){var k=$("<div />").addClass("filter-tag"),
+sa,B=H[oa];sa=m[B];var K=sa.name,N=sa.count,u=$("<label />").attr({"for":B,id:B+"-label"});0==N?(sa=this.getCheckBox_(K,B,!1),u.addClass("disabled"),u.text(K)):(sa=this.getCheckBox_(K,B,!0),u.text(K+" ("+N+")"));k.append(sa);k.append(u);-1!=a.indexOf(B)&&(sa.prop("checked",!0),sa.prop("disabled",!1));var xa=this;sa.bind("change",function(a){xa.checkBoxChangeHandler_(a)});J.append(k)}e.append(J);c.append(d)}var Ea=g.children();Ea.eq(this.selectedTabIndex_).addClass("selected");xa=this;Ea.click(function(a){xa.tabChangeHandler_(a,
+Ea,e)});c.append(e);Ea.eq(this.selectedTabIndex_).click();return c};h.handleClickedTag=function(a,b){var c=b.tags;this.updateFilters(c,1,b.isHideWidget);for(var d in c)this.updateSelectedTagsBar(c[d]);this.clearButton_.show();this.toggleButton_.text("Hide Filters")};
+h.updateSelectedTagsBar=function(a){var b=this;$("#selected-tags").is(":visible")||($("#selected-tags").show(),$("#selected-tags").css("display","inline-block"));if($("#"+a).is(":checked")){var c=$("#"+a).attr("value");if(!$("#tag-"+a).length){var d=$("<span />").addClass("selected-tag").text(c),c=$("<span />").addClass("selected-tag close-span").attr("id","tag-"+a).text("x"),d=$("<span />").append(d,c),b=this;$(c).click(function(){$("#"+a).prop("checked",!1);$("#"+a).triggerHandler("change");b.updateSelectedTagsBar(a);
+$("#filter-options").is(":visible")||b.toggleButton_.click()});$("#selected-tags").append(d)}}else $("#tag-"+a).parent().remove(),$(".selected-tag")[0]||$("#selected-tags").hide()};h.getSortedCategoryTabs_=function(a){var b=[],c="",d;for(d in a)$.trim(d).toLowerCase()==this.OTHER_CATEGORY_NAME_?c=d:b.push(d);b.sort();c&&b.push(c);return b};h.getSortedTags_=function(a){var b=[],c;for(c in a)b.push(c);return b.sort(function(a,b){return a.toLowerCase().localeCompare(b.toLowerCase())})};
+h.getCheckBox_=function(a,b,c){a=$("<input/>").attr({type:"checkbox",name:"filters",id:b,value:a,"class":"kd-checkbox"});c||(a.addClass("tag-check"),a.prop("disabled",!0));return a};
+h.checkBoxChangeHandler_=function(a){var b=[],c=$(a.target),d=c.attr("id");c.is(":checked")?(b.push(d),this.container_.find("#"+d).prop("checked",!0)):this.container_.find("#"+d).prop("checked",!1);this.container_.find('input:checkbox[name="filters"]:checked').each(function(){var a=$(this).attr("id");-1==$.inArray(a,b)&&b.push(a)});b.length?this.clearButton_.show():this.clearButton_.hide();$("#tag-component").trigger("tag_changed",{tags:b});$("#filter-options").addClass("filter-option-click-disabled");
+$("#selected-tags").addClass("filter-option-click-disabled");this.updateFilters(b,1);this.updateSelectedTagsBar($(a.target).attr("id"))};h.tabChangeHandler_=function(a,b,c){b.removeClass("selected");$(a.target).addClass("selected");a=b.index($(a.target));c.children("div").hide().eq(a).show();this.selectedTabIndex_=a;this.adjustHeight_();c=$("#filter-options").find(".tag-text").eq(0).height();a=$("#vtab").height();c+=a;$("#filter-options").animate({height:c},"fast")};
+h.adjustHeight_=function(){var a=$("#vtab").find("#cat-div").height(),b=$("#vtab").find("ul").height();a<b&&$("#vtab").find("#cat-div").css("min-height",b)};s.tag.Widget.SetResultCounterText=function(a,b){var c;c=b?gettext("%s results"):gettext("All %s results");c=interpolate(c,[a]);$("#result-counter").html(c)};s.tag.initDetailsPage=function(){$.get("/tags/gettags",function(a){$('input[name="sq"]').autocomplete({source:Object.keys(a)})})};s.chips=s.chips||{};s.chips.AddChip=function(a,b,c,d,e,g){var f=$("<li></li>"),r=$("<a></a>");r.addClass("button button-blue mini");d&&r.addClass("left");r.text(a);e||(e=function(a,b){b.length&&b.val(a.children("a.left").text());a.remove()});r.click(function(){e(f,b)});f.append(r);d&&(a=$("<a><span>x</span></a>"),a.addClass("button button-blue small right mini"),f.append(a),g||(g=function(a){a.remove()}),a.click(function(){g(f,b)}));c.append(f);return f};s.progress=s.progress||{};s.progress.INTERVAL_TIME_MS=460;s.progress.MAX_LOOP=100;s.progress.RIGHT_MARGIN=6;s.progress.TOP_MARGIN=5;
+s.progress.kennedyProgressDot=function(a){s.progress.circleInnerHtml='<span class="mask first"><span class="base"></span><span class="mover"></span></span><span class="mask second"><span class="base"></span><span class="mover"></span></span>';s.progress.spinnerHtml='<div class="circle initial"><span class="mask"><span class="mover"></span></span></div><div class="circle red"></div><div class="circle yellow"></div><div class="circle green"></div><div class="circle blue"></div>';var b=$("<div></div>").prop("id",
+"loader").prop("class","yellow").html(s.progress.spinnerHtml);b.find(".red").html(s.progress.circleInnerHtml);b.find(".blue").html(s.progress.circleInnerHtml);b.find(".green").html(s.progress.circleInnerHtml);b.find(".yellow").html(s.progress.circleInnerHtml);b.css({position:"absolute",right:s.progress.RIGHT_MARGIN+"px",top:s.progress.TOP_MARGIN+"px"});a.append(b);a=function(){this.colorIndex=-1;this.colors=["red","yellow","green","blue"];this.loader=b;this.loopCount=0;this.shouldStop=!1};a.prototype.start=
+function(){var a=this;this.loader.removeClass();this.loader.addClass("firstTime");this.interval=setInterval(function(){a.loop()},s.progress.INTERVAL_TIME_MS)};a.prototype.loop=function(){this.loopCount+=1;this.loader.hasClass("firstTime")?(this.loader.removeClass("firstTime"),this.loader.addClass("initial")):this.loader.hasClass("stopped")?(this.loader.removeClass("stopped"),this.loader.addClass("finishing")):this.loader.hasClass("finishing")?(clearInterval(this.interval),b.remove()):(this.colorIndex=
+(this.colorIndex+1)%this.colors.length,this.loader.removeClass(),this.loader.addClass(this.colors[this.colorIndex]),(this.shouldStop||this.loopCount>s.progress.MAX_LOOP)&&this.loader.addClass("stopped"))};a.prototype.stop=function(){this.shouldStop=!0};var c=new a;return a={start:function(){$.fx.off||c.start()},clear:function(){b.remove()},error:function(){c.stop()}}};s.pagination=s.pagination||{};s.pagination.MAX_LOADER_PAGES_=100;s.pagination.ERROR_="_error_";s.pagination.defaults_={};s.pagination.defaults_.fetchUrl="";s.pagination.defaults_.navSelector=".paging-nav";s.pagination.defaults_.containerSelector=".paging-content";s.pagination.defaults_.progressSelector=".paging-progress";s.pagination.defaults_.entryElement="li";s.pagination.defaults_.pageHashKey="p";s.pagination.defaults_.fadeDuration=s.KD_FADE_LONG;
+s.pagination.defaults_.fadeInterval=s.pagination.fadeDuration/4;s.pagination.defaults_.renderFunction=function(a){return a};s.pagination.defaults_.postRenderFunction=function(){};s.pagination.defaults_.onComplete=function(){};
+s.pagination.Pager=function(a){a=$.extend({},s.pagination.defaults_,a);this.nav_=$(a.navSelector);this.contentContainer_=$(a.containerSelector);this.progressContainer_=$(a.progressSelector);this.fetchUrl_=a.fetchUrl;this.entryElement_=a.entryElement;this.pageHashKey_=a.pageHashKey;this.renderFunction_=a.renderFunction;this.postRenderFunction_=a.postRenderFunction;this.onComplete_=a.onComplete;this.fadeDuration_=a.fadeDuration;this.fadeInterval_=a.fadeInterval;this.cache_={};this.progress_=null;if(a=
+s.location.search)this.query_=a.substr(1)};h=s.pagination.Pager.prototype;h.initParallelLoader=function(a,b){this.startActivityIndicator_();for(var c=Math.ceil(a.length/b),d=[],e=0;e<c;e++){var g=a.slice(e*b,(e+1)*b);this.contentContainer_.append(this.makePlaceholder_(e));d.push(this.parallelFetch_(e,g))}var f=this;$.when.apply(null,d).done(function(){f.stopActivityIndicator_();f.postRenderFunction_(f.contentContainer_);f.onComplete_(f.contentContainer_)})};
+h.makePlaceholder_=function(a){return $(document.createElement(this.entryElement_)).addClass("placeholder-"+a)};h.getPlaceholder_=function(a){return this.contentContainer_.find(".placeholder-"+a)};h.parallelFetch_=function(a,b){for(var c=this.query_?[this.query_]:[],d=0;d<b.length;d++)c.push("k="+b[d]);var e=this;return $.ajax({url:e.fetchUrl_,data:c.join("&"),success:function(b){b=$(e.renderFunction_(b)).hide();e.getPlaceholder_(a).replaceWith(b.fadeIn(e.fadeDuration_))},error:function(){e.getPlaceholder_(a).remove()}})};
+h.initLoader=function(){var a=this.contentContainer_.find(".paging-cursor").data("cursor")||"";this.recursiveFetch_(1,s.pagination.MAX_LOADER_PAGES_,a,$.proxy(this.appendResponse_,this))};
+h.initPager=function(){this.hashPattern_=new RegExp("(.*[#|&])"+this.pageHashKey_+"=(\\d+)(.*)$");var a=this;this.nav_.find("button").unbind();this.nav_.find("button.next").click(function(){a.next()});this.nav_.find("button.previous").click(function(){a.previous()});this.nav_.find("button.first").click(function(){a.first()});var b=this.hashPattern_.exec(s.location.hash),b=b?parseInt(b[2]):1;if(this.contentContainer_.html().trim()){this.page_=1;this.cache_[1]=this.contentContainer_.children().clone(!0);
+this.postRenderFunction_(this.contentContainer_);var c=this.contentContainer_.find(".paging-cursor").data("cursor");1<b&&c&&this.recursiveFetch_(2,b,c)}else this.recursiveFetch_(1,b,"")};h.appendResponse_=function(a){a=a.filter(this.entryElement_).clone(!0);var b=this;a.each(function(a,d){d=$(d);d.css("opacity","0").appendTo(b.contentContainer_);d.delay(a*b.fadeInterval_).fadeTo(b.fadeDuration_,1)})};
+h.recursiveFetch_=function(a,b,c,d){var e=this.query_?this.query_+"&c="+c:"c="+c,g=this;this.startActivityIndicator_();$.get(this.fetchUrl_,e,function(e){e=$(g.renderFunction_(e));c=$("<div>").append(e).find(".paging-cursor").data("cursor");d&&d(e);g.cache_[a]=e;if(a!=b&&c)g.recursiveFetch_(a+1,b,c,d);else{g.stopActivityIndicator_();if(!c)g.onComplete_(g.contentContainer_);d||g.showPage_(a)}})};
+h.next=function(){var a=this.page_+1,b=this.cache_[a];b||(b=this.contentContainer_.find(".paging-cursor").data("cursor"),this.recursiveFetch_(a,a,b));this.showPage_(a)};h.previous=function(){this.showPage_(this.page_-1)};h.first=function(){this.showPage_(1)};h.showPage_=function(a){var b=this.cache_[a];b&&(this.contentContainer_.empty().append(b),this.page_=a,this.updateRange_(),this.updateButtons_(),this.updateHash_(this.page_),this.postRenderFunction_(this.contentContainer_))};
+h.updateHash_=function(a){if(s.location.hash){var b=this.hashPattern_.exec(s.location.hash);s.location.hash=b?b[1]+this.pageHashKey_+"="+a+b[3]:s.location.hash+"&"+this.pageHashKey_+"="+a}else s.location.hash="#"+this.pageHashKey_+"="+a};h.updateRange_=function(){var a=this.nav_.data("itemsperpage"),b=this.contentContainer_.find(this.entryElement_).size();this.nav_.find(".paging-range .first").html((this.page_-1)*a+1);this.nav_.find(".paging-range .last").html((this.page_-1)*a+b)};
+h.updateButtons_=function(){var a=1==this.page_;this.nav_.find("button.previous").toggleClass("disabled",a);this.nav_.find("button.first").toggleClass("disabled",a);a=!this.contentContainer_.find(".paging-cursor").data("cursor");this.nav_.find("button.next").toggleClass("disabled",a)};h.startActivityIndicator_=function(){this.progress_||(this.progress_=s.progress.kennedyProgressDot(this.progressContainer_),this.progress_.start())};
+h.stopActivityIndicator_=function(){this.progress_&&(this.progress_.clear(),this.progress_=null)};s=s||{};s.tag=s.tag||{};
+s.tag.AutocompleteWidget=function(a,b,c,d,e){this.KEY_LEFT=37;this.KEY_RIGHT=39;this.KEY_BACKSPACE=8;this.KEY_DELETE=46;this.KEY_ENTER=13;this.KEY_COMMA=188;var g=this,f=$("#"+a);this.requireValid_=b;this.maxTags_=d;this.displayNames_=[];this.tagKeys_=[];this.autocompleteText_=[];this.nameToIndex_={};this.keyNameToIndex_={};this.parseTagData_=function(a){for(var b in a)this.displayNames_.push(b);this.displayNames_.sort();for(var c=0;c<this.displayNames_.length;c++){b=this.displayNames_[c];var d=a[b].id,
+e=a[b]["private"];this.nameToIndex_[b]=c;this.keyNameToIndex_[d]=c;this.tagKeys_.push(d);b=e?"":this.getComparableDisplayName_(b);this.autocompleteText_.push(b)}};this.getComparableDisplayName_=function(a){return a.toLowerCase().replace(/google /,"")};this.init_=function(a,b){b?this.Autocomplete_(b):$.get("/tags/gettags",function(a){g.Autocomplete_(a)});for(var c=0;c<a.length;c++)a[c]&&this.AddChosenTag(a[c].trim());f.focusin(function(a){$(this).addClass("focus");$(a.target).hasClass("tag-autocomplete")&&
+f.children("input").focus()}).focusout(function(){f.removeClass("focus")});var d;f.click(function(){d&&(d.children().removeClass("selected"),d=null)});f.siblings(".too-many-tags").children(".max-tags").text(g.maxTags_);f.children("input").keydown(function(a){var b=a.keyCode,c=$(this).val(),e=f.siblings(".tags-not-found");a=f.siblings(".too-many-tags");var m=f.children(".chosen-tags");e.addClass("hidden");a.addClass("hidden");if(!c&&m.children().length)b==g.KEY_BACKSPACE||b==g.KEY_DELETE?d?(b=d,d=
+d.next(),g.RemoveTag_(b)):b==g.KEY_BACKSPACE&&(d=m.children(":last-child")):b==g.KEY_LEFT||b==g.KEY_RIGHT?(c=":"+(b==g.KEY_LEFT?"last":"first")+"-child",d?(d.children().removeClass("selected"),d=b==g.KEY_LEFT?d.prev():d.next()):d=m.children(c)):d&&d.length&&(d.children().removeClass("selected"),d=null),d&&!d.length?d=null:d&&d.children().addClass("selected");else if(c&&(b==g.KEY_ENTER||b==g.KEY_COMMA))return g.requireValid_&&void 0==g.nameToIndex_[c]?e&&e.children(".tag-list")&&(e.children(".tag-list").text(c),
+e.removeClass("hidden")):g.AddChosenTag(c),f.children("input").autocomplete("close"),!1;if(g.maxTags_&&g.GetNumberOfChosenTags_()>=g.maxTags_)return a.removeClass("hidden"),f.children("input").autocomplete("option","disabled",!0),!1})};this.getSuggestions_=function(a,b){for(var c=a.term.toLowerCase(),d=[],e=[],f=0;f<g.displayNames_.length;f++)-1<g.autocompleteText_[f].indexOf(c)&&(d.push({label:g.displayNames_[f],value:g.displayNames_[f]}),e.push(g.displayNames_[f]));b(d)};this.Autocomplete_=function(a){this.parseTagData_(a);
+a=f.attr("id");var b=$.Event(a+"-tags-loaded");f.trigger(b);f.children("input").autocomplete({appendTo:"#"+a,delay:50,minLength:1,select:function(a,b){g.AddChosenTag(b.item.label);return!1},source:g.getSuggestions_,focus:function(a,b){$(".ui-autocomplete").children("li").each(function(){var a=$(this);a.toggleClass("selected",a.children().text()==b.item.label)})}})};this.AddChosenTagByKeyName=function(a){a=g.keyNameToIndex_[a];void 0!=a&&(a=g.displayNames_[a],g.AddChosenTag(a))};this.AddChosenTag=
+function(a){var b=f.find(".chosen-tags a.left"),b=b.filter(function(){return $(this).text()===a}).parent();b.length?(b.detach(),f.children(".chosen-tags").append(b)):(b=f.children("input"),s.chips.AddChip(a,b,f.children(".chosen-tags"),!0));f.children("input").val("")};this.RemoveTag_=function(a){a.remove();f.children("input").autocomplete("option","disabled",!1)};this.GetTagNames=function(){var a=[],b=[],c=[];f.find(".chosen-tags").find("a.left").each(function(){c.push($(this).text())});var d=f.find(".tag-autocomplete-input").val();
+d&&c.push(d);for(d=0;d<c.length;d++){var e=c[d];a.push(e);g.requireValid_&&void 0==g.nameToIndex_[e]&&b.push(e)}return b.length?(a=f.siblings(".tags-not-found"),a.children(".tag-list").text(b.join(", ")),a.removeClass("hidden"),!1):a};this.GetTagKeys=function(){var a=g.GetTagNames();if(!a)return!1;for(var b=[],c=0;c<a.length;c++){var d=g.nameToIndex_[a[c]];b.push(g.tagKeys_[d])}return b};this.ClearAllTags=function(){f.children(".chosen-tags").empty()};this.GetNumberOfChosenTags_=function(){return f.children(".chosen-tags").children("li").length};
+this.init_((c||"").split(","),e);return{AddChosenTag:this.AddChosenTag,AddChosenTagByKeyName:this.AddChosenTagByKeyName,GetTagNames:this.GetTagNames,GetTagKeys:this.GetTagKeys,ClearAllTags:this.ClearAllTags}};s.customInputs=s.customInputs||{};s.customInputs.CssClasses={BLUE_BUTTON:"button-blue",BUTTON:"button",DELETE_SPAN:"delete-span",INPUT_CONTENT:"input-content",INPUT_LIST:"input-list",MULTIPLE_INPUT_WIDGET:"multiple-input-widget",TEXT_INPUT:"kd-textinput"};s.customInputs.defaults={handleForm:!0,defaultValues:[],inputWidth:0,inputHeight:0};
+s.customInputs.MultipleInputWidget=function(a,b,c){c=$.extend({},s.customInputs.defaults,c);var d=s.customInputs.CssClasses;this.parentContainer_=a;this.containerDiv_=$("<div />").addClass(d.MULTIPLE_INPUT_WIDGET);this.handleForm_=c.handleForm;this.inputName_=b;this.inputs_=[];this.textWidth_=c.inputWidth;this.textHeight_=c.inputHeight;this.textBox_=$("<input />").prop("type","text").addClass(d.TEXT_INPUT);this.inputList_=$("<div />").addClass(d.INPUT_LIST);this.renderWidget_();a=c.defaultValues;
+for(b=0;b<a.length;b++)this.addInput_(a[b]);this.parentContainer_.append(this.containerDiv_)};h=s.customInputs.MultipleInputWidget.prototype;
+h.renderWidget_=function(){var a=s.customInputs.CssClasses,b=$("<input />").prop("type","button").val("Add");b.addClass(a.BUTTON+" "+a.BLUE_BUTTON);0<this.textWidth_&&this.textBox_.css("width",this.textWidth_);0<this.textHeight_&&(this.textBox_.css("height",this.textHeight_),b.css("height",this.textHeight_));b.click($.proxy(function(){this.addInput_(this.textBox_.val())},this));this.textBox_.keypress($.proxy(function(a){13==a.which&&(this.addInput_(this.textBox_.val()),a.preventDefault())},this));
+this.containerDiv_.append(this.textBox_,b,this.inputList_)};h.addInput_=function(a){(a=$.trim(a))&&-1==$.inArray(a,this.inputs_)&&(this.inputs_.push(a),this.renderInput_(a))};h.deleteInput_=function(a){a=$.trim(a);var b=$.inArray(a,this.inputs_);-1!=b&&(this.inputs_.splice(b,1),this.renderInput_(a,!0))};
+h.renderInput_=function(a,b){var c=s.customInputs.CssClasses;if(b){for(var d=this.inputList_.find("."+c.INPUT_CONTENT),c=0;c<d.length;c++)if($(d[c]).text()==a){$(d[c]).parent().remove();break}this.handleForm_&&this.containerDiv_.find('input:hidden[value="'+a+'"]').remove()}else d=$("<span />").text(a),d.addClass(c.INPUT_CONTENT),c=$("<span />").text("X").addClass(c.DELETE_SPAN),c.click($.proxy(this.deleteInput_,this,a)),d=$("<div />").append(c,d),this.inputList_.append(d),this.handleForm_&&(d={type:"hidden",
+name:this.inputName_,value:a},d=$("<input/>").prop(d),this.containerDiv_.append(d)),this.textBox_.val("").focus()};h.getInputs=function(){return this.inputs_};var JSON;
+JSON||(JSON=function(){function a(a){return 10>a?"0"+a:a}function b(a){e.lastIndex=0;return e.test(a)?'"'+a.replace(e,function(a){var b=r[a];return"string"===typeof b?b:"\\u"+("0000"+(+a.charCodeAt(0)).toString(16)).slice(-4)})+'"':'"'+a+'"'}function c(a,d){var e,k,r,B,K=g,N,u=d[a];u&&"object"===typeof u&&"function"===typeof u.toJSON&&(u=u.toJSON(a));"function"===typeof m&&(u=m.call(d,a,u));switch(typeof u){case "string":return b(u);case "number":return isFinite(u)?String(u):"null";case "boolean":case "null":return String(u);case "object":if(!u)return"null";
+g+=f;N=[];if("number"===typeof u.length&&!u.propertyIsEnumerable("length")){B=u.length;for(e=0;e<B;e+=1)N[e]=c(e,u)||"null";r=0===N.length?"[]":g?"[\n"+g+N.join(",\n"+g)+"\n"+K+"]":"["+N.join(",")+"]";g=K;return r}if(m&&"object"===typeof m)for(B=m.length,e=0;e<B;e+=1)k=m[e],"string"===typeof k&&(r=c(k,u))&&N.push(b(k)+(g?": ":":")+r);else for(k in u)Object.hasOwnProperty.call(u,k)&&(r=c(k,u))&&N.push(b(k)+(g?": ":":")+r);r=0===N.length?"{}":g?"{\n"+g+N.join(",\n"+g)+"\n"+K+"}":"{"+N.join(",")+"}";
+g=K;return r}}Date.prototype.toJSON=function(){return this.getUTCFullYear()+"-"+a(this.getUTCMonth()+1)+"-"+a(this.getUTCDate())+"T"+a(this.getUTCHours())+":"+a(this.getUTCMinutes())+":"+a(this.getUTCSeconds())+"Z"};String.prototype.toJSON=Number.prototype.toJSON=Boolean.prototype.toJSON=function(){return this.valueOf()};var d=/[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,e=/[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,
+g,f,r={"\b":"\\b","\t":"\\t","\n":"\\n","\f":"\\f","\r":"\\r",'"':'\\"',"\\":"\\\\"},m;return{stringify:function(a,b,d){var e;f=g="";if("number"===typeof d)for(e=0;e<d;e+=1)f+=" ";else"string"===typeof d&&(f=d);if((m=b)&&"function"!==typeof b&&("object"!==typeof b||"number"!==typeof b.length))throw Error("JSON.stringify");return c("",{"":a})},parse:function(a,b){function c(a,b){var d,g,f=a[b];if(f&&"object"===typeof f)for(d in f)Object.hasOwnProperty.call(f,d)&&(g=c(f,d),void 0!==g?f[d]=g:delete f[d]);
+return e.call(a,b,f)}var e=b,g;d.lastIndex=0;d.test(a)&&(a=a.replace(d,function(a){return"\\u"+("0000"+(+a.charCodeAt(0)).toString(16)).slice(-4)}));if(/^[\],:{}\s]*$/.test(a.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g,"@").replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,"]").replace(/(?:^|:|,)(?:\s*\[)+/g,"")))return g=eval("("+a+")"),"function"===typeof e?c({"":g},""):g;throw Error("JSON.parse");}}}());
+JSON.parse=function(){var a=JSON.parse;return function(b,c){try{return a(b,c)}catch(d){return!1}}}();s.api=s.api||{};
+s.api.ApiExplorer=function(){var a=this;this.apiKey=$("#base-url").attr("api-key");$("#base-url").removeAttr("api-key");a.windowLocation=s.location;$("#apis-select").bind("change",function(){a.selectedApi_&&$("#"+a.selectedApi_).hide();$("#errors").empty().hide();$("#"+this.value).show();a.selectedApi_=this.value;$("#api-button").show()});$("#api-button").click(function(){var b=$("#error-text").html(),c=a.validation(a.selectedApi_);c?($("#errors").html(b+c+"."),$("#errors").show()):a.sendApiRequest(a.selectedApi_)});
+$("#apis-select").change()};s.api.ApiExplorer.prototype.validation=function(a){var b=[];$.each($("#"+a).find("input"),function(a,d){var e=/^[0-9a-zA-Z.,?!-_ ]+$/;"true"===d.getAttribute("required")&&(e.test(d.value)||b.push(d.name))});return b.length?b.join(", "):""};
+s.api.ApiExplorer.prototype.sendApiRequest=function(a){var b=this;$("#errors").empty().hide();$("#result").show();$("#result").html($("#working-text").html());$("#apis-select").prop("disabled",!0);$("#api-button").prop("disabled",!0);var c,d=b.windowLocation.origin+$("#base-url").attr("name"),d=d+("/"+$("#"+a).attr("path")+"?");d.indexOf("{");$.each($("#"+a).find("input"),function(a,b){var f=b.name;"oAuth_key"==f?c="Bearer "+b.value:d=-1!=d.indexOf("{"+f+"}")?d.replace("{"+f+"}",b.value):d+(f+"="+
+b.value+"&")});a=d+"api_key="+b.apiKey;$.ajax({url:a,type:"GET",beforeSend:function(a){a.setRequestHeader("Authorization",c)},success:function(a){a=$('<pre class="showcaseItem" />').append(s.api.ApiExplorer.toString_(a,""));$("#result").empty().append(a);$("#apis-select").prop("disabled",!1);$("#api-button").prop("disabled",!1)},error:function(a){a=$('<pre class="showcaseItem" />').append(a.status+" : "+a.statusText);$("#result").empty().append(a);$("#apis-select").prop("disabled",!1);$("#api-button").prop("disabled",
+!1)}})};s.api.ApiExplorer.toString_=function(a,b){var c=b||"";if(null==a)return"null";if("boolean"==typeof a)return a?"true":"false";if("number"==typeof a||a.charAt)return a;if(a.push){for(var d=Array(a.length),e=0;e<a.length;e++)d[e]=s.api.ApiExplorer.toString_(a[e],c+"  ");return"["+d.join(",\n"+c)+"]"}d=[];for(e in a)d.push("<b>"+e+"</b>:"+s.api.ApiExplorer.toString_(a[e],c+"  "));return"{"+d.join(",\n"+c)+"}"};/*
+
+ Copyright (c) 2011 Adam Shaw
+ Dual licensed under the MIT and GPL licenses, located in
+ MIT-LICENSE.txt and GPL-LICENSE.txt respectively.
+
+ Date: Sat Mar 19 18:59:37 2011 -0700
+
+ FullCalendar v1.5
+ http://arshaw.com/fullcalendar/
+
+ Use fullcalendar.css for basic styling.
+ For event drag & drop, requires jQuery UI draggable.
+ For event resizing, requires jQuery UI resizable.
+*/
+(function(a,b){function c(b){a.extend(!0,Ia,b)}function d(c,d,ua){function aa(b){C?(n(),Sa(),fa(),v(b)):(c.addClass("fc"),d.isRTL&&c.addClass("fc-rtl"),d.theme&&c.addClass("ui-widget"),C=a("<div class='fc-content' style='position:relative'/>").prependTo(c),T=new e(z,d),(M=T.render())&&c.prepend(M),jb(d.defaultView),a(window).resize(na),0!==a("body")[0].offsetWidth||W())}function W(){setTimeout(function(){!t.start&&0!==a("body")[0].offsetWidth&&v()},0)}function Q(){a(window).unbind("resize",na);T.destroy();
+C.remove();c.removeClass("fc fc-rtl ui-widget")}function jb(b){if(!t||b!=t.name){R++;U();var c=t,l;c?((c.beforeHide||kb)(),Ka(C,C.height()),c.element.hide()):Ka(C,1);C.css("overflow","hidden");(t=O[b])?t.element.show():t=O[b]=new va[b](l=pa=a("<div class='fc-view fc-view-"+b+"' style='position:absolute'/>").appendTo(C),z);c&&T.deactivateButton(c.name);T.activateButton(b);v();C.css("overflow","");c&&Ka(C,1);l||(t.afterShow||kb)();R--}}function v(a){if(0!==ea.offsetWidth){R++;U();E===b&&n();var e=!1;
+!t.start||a||G<t.start||G>=t.end?(t.render(G,a||0),q(!0),e=!0):t.sizeDirty?(t.clearEvents(),q(),e=!0):t.eventsDirty&&(t.clearEvents(),e=!0);t.sizeDirty=!1;t.eventsDirty=!1;a=e;!d.lazyFetching||p(t.visStart,t.visEnd)?lb():a&&I();L=c.outerWidth();T.updateTitle(t.title);a=new Date;a>=t.start&&a<t.end?T.disableButton("today"):T.enableButton("today");R--;t.trigger("viewDisplay",ea)}}function X(){Sa();0!==ea.offsetWidth&&(n(),q(),U(),t.clearEvents(),t.renderEvents(ca),t.sizeDirty=!1)}function Sa(){a.each(O,
+function(a,b){b.sizeDirty=!0})}function n(){E=d.contentHeight?d.contentHeight:d.height?d.height-(M?M.height():0)-Ya(C):Math.round(C.width()/Math.max(d.aspectRatio,.5))}function q(a){R++;t.setHeight(E,a);pa&&(pa.css("position","relative"),pa=null);t.setWidth(C.width(),a);R--}function na(){if(!R)if(t.start){var a=++la;setTimeout(function(){a!=la||R||0===ea.offsetWidth||L==(L=c.outerWidth())||(R++,X(),t.trigger("windowResize",ea),R--)},200)}else W()}function lb(){D(t.visStart,t.visEnd)}function H(a){ca=
+a;I()}function J(a){I(a)}function I(a){fa();0!==ea.offsetWidth&&(t.clearEvents(),t.renderEvents(ca,a),t.eventsDirty=!1)}function fa(){a.each(O,function(a,b){b.eventsDirty=!0})}function ga(a,c,l){t.select(a,c,l===b?!0:l)}function U(){t&&t.unselect()}function A(){v(-1)}function S(){v(1)}function u(){f(G,-1);v()}function P(){f(G,1);v()}function Y(){G=new Date;v()}function ba(a,b,c){a instanceof Date?G=k(a):N(G,a,b,c);v()}function x(a,c,l){a!==b&&f(G,a);c!==b&&r(G,c);l!==b&&m(G,l);v()}function F(){return k(G)}
+function ja(){return t}function V(a,c){if(c===b)return d[a];if("height"==a||"contentHeight"==a||"aspectRatio"==a)d[a]=c,X()}function Ba(a,b){if(d[a])return d[a].apply(b||ea,Array.prototype.slice.call(arguments,2))}var z=this;z.options=d;z.render=aa;z.destroy=Q;z.refetchEvents=lb;z.reportEvents=H;z.reportEventChange=J;z.rerenderEvents=I;z.changeView=jb;z.select=ga;z.unselect=U;z.prev=A;z.next=S;z.prevYear=u;z.nextYear=P;z.today=Y;z.gotoDate=ba;z.incrementDate=x;z.formatDate=function(a,b){return ta(a,
+b,d)};z.formatDates=function(a,b,c){return Ta(a,b,c,d)};z.getDate=F;z.getView=ja;z.option=V;z.trigger=Ba;g.call(z,d,ua);var p=z.isFetchNeeded,D=z.fetchEvents,ea=c[0],T,M,C,t,O={},L,E,pa,la=0,R=0,G=new Date,ca=[],ha;N(G,d.year,d.month,d.date);d.droppable&&a(document).bind("dragstart",function(b,c){var l=b.target,e=a(l);if(!e.parents(".fc").length){var ja=d.dropAccept;if(a.isFunction(ja)?ja.call(l,e):e.is(ja))ha=l,t.dragStart(ha,b,c)}}).bind("dragstop",function(a,b){ha&&(t.dragStop(ha,a,b),ha=null)})}
+function e(b,c){function d(){k=c.theme?"ui":"fc";if(c.header)return q=a("<table class='fc-header' style='width:100%'/>").append(a("<tr/>").append(W("left")).append(W("center")).append(W("right")))}function e(){q.remove()}function W(d){var e=a("<td class='fc-header-"+d+"'/>");(d=c.header[d])&&a.each(d.split(" "),function(d){0<d&&e.append("<span class='fc-header-space'/>");var aa;a.each(this.split(","),function(d,ua){if("title"==ua)e.append("<span class='fc-header-title'><h2>&nbsp;</h2></span>"),aa&&
+aa.addClass(k+"-corner-right"),aa=null;else{var W;b[ua]?W=b[ua]:va[ua]&&(W=function(){f.removeClass(k+"-state-hover");b.changeView(ua)});if(W){d=c.theme?cb(c.buttonIcons,ua):null;var Q=cb(c.buttonText,ua),f=a("<span class='fc-button fc-button-"+ua+" "+k+"-state-default'><span class='fc-button-inner'><span class='fc-button-content'>"+(d?"<span class='fc-icon-wrap'><span class='ui-icon ui-icon-"+d+"'/></span>":Q)+"</span><span class='fc-button-effect'><span></span></span></span></span>");f&&(f.click(function(){f.hasClass(k+
+"-state-disabled")||W()}).mousedown(function(){f.not("."+k+"-state-active").not("."+k+"-state-disabled").addClass(k+"-state-down")}).mouseup(function(){f.removeClass(k+"-state-down")}).hover(function(){f.not("."+k+"-state-active").not("."+k+"-state-disabled").addClass(k+"-state-hover")},function(){f.removeClass(k+"-state-hover").removeClass(k+"-state-down")}).appendTo(e),aa||f.addClass(k+"-corner-left"),aa=f)}}});aa&&aa.addClass(k+"-corner-right")});return e}function Q(a){q.find("h2").html(a)}function f(a){q.find("span.fc-button-"+
+a).addClass(k+"-state-active")}function g(a){q.find("span.fc-button-"+a).removeClass(k+"-state-active")}function m(a){q.find("span.fc-button-"+a).addClass(k+"-state-disabled")}function Sa(a){q.find("span.fc-button-"+a).removeClass(k+"-state-disabled")}var n=this;n.render=d;n.destroy=e;n.updateTitle=Q;n.activateButton=f;n.deactivateButton=g;n.disableButton=m;n.enableButton=Sa;var q=a([]),k}function g(c,d){function e(a,b){return!Z||a<Z||b>P}function aa(a,b){Z=a;P=b;F=[];a=++Y;ba=b=S.length;for(var c=
+0;c<b;c++)f(S[c],a)}function f(a,b){Q(a,function(c){if(b==Y){if(c){for(var l=0;l<c.length;l++)c[l].source=a,H(c[l]);F=F.concat(c)}ba--;ba||U(F)}})}function Q(b,d){var e,da=ia.sourceFetchers,aa;for(e=0;e<da.length;e++){aa=da[e](b,Z,P,d);if(!0===aa)return;if("object"==typeof aa){Q(aa,d);return}}if(e=b.events)a.isFunction(e)?(x++||fa("loading",null,!0),e(k(Z),k(P),function(a){d(a);--x||fa("loading",null,!1)})):a.isArray(e)?d(e):d();else if(b.url){var ua=b.success,f=b.error,W=b.complete;e=a.extend({},
+b.data||{});da=za(b.startParam,c.startParam);aa=za(b.endParam,c.endParam);da&&(e[da]=Math.round(+Z/1E3));aa&&(e[aa]=Math.round(+P/1E3));x++||fa("loading",null,!0);a.ajax(a.extend({},Gb,b,{data:e,success:function(b){b=b||[];var c=La(ua,this,arguments);a.isArray(c)&&(b=c);d(b)},error:function(){La(f,this,arguments);d()},complete:function(){La(W,this,arguments);--x||fa("loading",null,!1)}}))}else d()}function g(a){if(a=v(a))ba++,f(a,Y)}function v(b){a.isFunction(b)||a.isArray(b)?b={events:b}:"string"==
+typeof b&&(b={url:b});if("object"==typeof b){var c=b;c.className?"string"==typeof c.className&&(c.className=c.className.split(/\s+/)):c.className=[];for(var l=ia.sourceNormalizers,d=0;d<l.length;d++)l[d](c);S.push(b);return b}}function m(b){S=a.grep(S,function(a){return!J(a,b)});F=a.grep(F,function(a){return!J(a.source,b)});U(F)}function Sa(a){var b,c=F.length,l,d=ga().defaultEventEnd,e=a.start-a._start,da=a.end?a.end-(a._end||d(a)):0;for(b=0;b<c;b++)l=F[b],l._id==a._id&&l!=a&&(l.start=new Date(+l.start+
+e),l.end=a.end?l.end?new Date(+l.end+da):new Date(+d(l)+da):null,l.title=a.title,l.url=a.url,l.allDay=a.allDay,l.className=a.className,l.editable=a.editable,l.color=a.color,l.backgroudColor=a.backgroudColor,l.borderColor=a.borderColor,l.textColor=a.textColor,H(l));H(a);U(F)}function n(a,b){H(a);a.source||(b&&(A.events.push(a),a.source=A),F.push(a));U(F)}function q(b){if(b){if(!a.isFunction(b)){var c=b+"";b=function(a){return a._id==c}}F=a.grep(F,b,!0);for(l=0;l<S.length;l++)a.isArray(S[l].events)&&
+(S[l].events=a.grep(S[l].events,b,!0))}else{F=[];for(var l=0;l<S.length;l++)a.isArray(S[l].events)&&(S[l].events=[])}U(F)}function r(b){return a.isFunction(b)?a.grep(F,b):b?(b+="",a.grep(F,function(a){return a._id==b})):F}function H(a){var d=a.source||{},e=za(d.ignoreTimezone,c.ignoreTimezone);a._id=a._id||(a.id===b?"_fc"+Hb++:a.id+"");a.date&&(a.start||(a.start=a.date),delete a.date);a._start=k(a.start=u(a.start,e));a.end=u(a.end,e);a.end&&a.end<=a.start&&(a.end=null);a._end=a.end?k(a.end):null;
+a.allDay===b&&(a.allDay=za(d.allDayDefault,c.allDayDefault));a.className?"string"==typeof a.className&&(a.className=a.className.split(/\s+/)):a.className=[]}function J(a,b){return a&&b&&K(a)==K(b)}function K(a){return("object"==typeof a?a.events||a.url:"")||a}var I=this;I.isFetchNeeded=e;I.fetchEvents=aa;I.addEventSource=g;I.removeEventSource=m;I.updateEvent=Sa;I.renderEvent=n;I.removeEvents=q;I.clientEvents=r;I.normalizeEvent=H;for(var fa=I.trigger,ga=I.getView,U=I.reportEvents,A={events:[]},S=[A],
+Z,P,Y=0,ba=0,x=0,F=[],I=0;I<d.length;I++)v(d[I])}function f(a,b,c){a.setFullYear(a.getFullYear()+b);c||oa(a);return a}function r(a,b,c){if(+a){b=a.getMonth()+b;var d=k(a);d.setDate(1);d.setMonth(b);a.setMonth(b);for(c||oa(a);a.getMonth()!=d.getMonth();)a.setDate(a.getDate()+(a<d?1:-1))}return a}function m(a,b,c){if(+a){b=a.getDate()+b;var d=k(a);d.setHours(9);d.setDate(b);a.setDate(b);c||oa(a);J(a,d)}return a}function J(a,b){if(+a)for(;a.getDate()!=b.getDate();)a.setTime(+a+(a<b?1:-1)*Ib)}function H(a,
+b){a.setMinutes(a.getMinutes()+b);return a}function oa(a){a.setHours(0);a.setMinutes(0);a.setSeconds(0);a.setMilliseconds(0);return a}function k(a,b){return b?oa(new Date(+a)):new Date(+a)}function sa(){var a=0,b;do b=new Date(1970,a++,1);while(b.getHours());return b}function B(a,b,c){for(b=b||1;!a.getDay()||c&&1==a.getDay()||!c&&6==a.getDay();)m(a,b);return a}function K(a,b){return Math.round((k(a,!0)-k(b,!0))/mb)}function N(a,c,d,e){c!==b&&c!=a.getFullYear()&&(a.setDate(1),a.setMonth(0),a.setFullYear(c));
+d!==b&&d!=a.getMonth()&&(a.setDate(1),a.setMonth(d));e!==b&&a.setDate(e)}function u(a,c){if("object"==typeof a)return a;if("number"==typeof a)return new Date(1E3*a);if("string"==typeof a){if(a.match(/^\d+$/))return new Date(1E3*parseInt(a,10));c===b&&(c=!0);return xa(a,c)||(a?new Date(a):null)}return null}function xa(a,b){a=a.match(/^([0-9]{4})(-([0-9]{2})(-([0-9]{2})([T ]([0-9]{2}):([0-9]{2})(:([0-9]{2})(\.([0-9]+))?)?(Z|(([-+])([0-9]{2}):([0-9]{2})))?)?)?)?$/);if(!a)return null;var c=new Date(a[1],
+0,1);b||!a[14]?(b=new Date(a[1],0,1,9,0),a[3]&&(c.setMonth(a[3]-1),b.setMonth(a[3]-1)),a[5]&&(c.setDate(a[5]),b.setDate(a[5])),J(c,b),a[7]&&c.setHours(a[7]),a[8]&&c.setMinutes(a[8]),a[10]&&c.setSeconds(a[10]),a[12]&&c.setMilliseconds(1E3*Number("0."+a[12])),J(c,b)):(c.setUTCFullYear(a[1],a[3]?a[3]-1:0,a[5]||1),c.setUTCHours(a[7]||0,a[8]||0,a[10]||0,a[12]?1E3*Number("0."+a[12]):0),b=60*Number(a[16])+Number(a[17]),b*="-"==a[15]?1:-1,c=new Date(+c+6E4*b));return c}function Ea(a){if("number"==typeof a)return 60*
+a;if("object"==typeof a)return 60*a.getHours()+a.getMinutes();if(a=a.match(/(\d+)(?::(\d+))?\s*(\w+)?/)){var b=parseInt(a[1],10);a[3]&&(b%=12,"p"==a[3].toLowerCase().charAt(0)&&(b+=12));return 60*b+(a[2]?parseInt(a[2],10):0)}}function ta(a,b,c){return Ta(a,null,b,c)}function Ta(a,b,c,d){d=d||Ia;var e=a,f=b,g,v=c.length,m,k,n,q="";for(g=0;g<v;g++)if(m=c.charAt(g),"'"==m)for(k=g+1;k<v;k++){if("'"==c.charAt(k)){e&&(q+=k==g+1?"'":c.substring(g+1,k),g=k);break}}else if("("==m)for(k=g+1;k<v;k++){if(")"==
+c.charAt(k)){g=ta(e,c.substring(g+1,k),d);parseInt(g.replace(/\D/,""),10)&&(q+=g);g=k;break}}else if("["==m)for(k=g+1;k<v;k++){if("]"==c.charAt(k)){m=c.substring(g+1,k);g=ta(e,m,d);g!=ta(f,m,d)&&(q+=g);g=k;break}}else if("{"==m)e=b,f=a;else if("}"==m)e=a,f=b;else{for(k=v;k>g;k--)if(n=Jb[c.substring(g,k)]){e&&(q+=n(e,d));g=k-1;break}k==g&&e&&(q+=m)}return q}function Ca(a){var b;a.end?(b=a.end,a=a.allDay,b=k(b),b=a||b.getHours()||b.getMinutes()?m(b,1):oa(b)):b=m(k(a.start),1);return b}function Kb(a,
+b){return 100*(b.msLength-a.msLength)+(a.event.start-b.event.start)}function db(a,b,c,d){var e=[],g,f=a.length,m,X,r,n,q;for(g=0;g<f;g++)m=a[g],X=m.start,r=b[g],r>c&&X<d&&(X<c?(X=k(c),n=!1):n=!0,r>d?(r=k(d),q=!1):q=!0,e.push({event:m,start:X,end:r,isStart:n,isEnd:q,msLength:r-X}));return e.sort(Kb)}function eb(a){var b=[],c,d=a.length,e,g,f,k;for(c=0;c<d;c++){e=a[c];for(g=0;;){f=!1;if(b[g])for(k=0;k<b[g].length;k++){var m;m=b[g][k];if(m=m.end>e.start&&m.start<e.end){f=!0;break}}if(f)g++;else break}b[g]?
+b[g].push(e):b[g]=[e]}return b}function nb(c,d,e){c.unbind("mouseover").mouseover(function(c){for(var l=c.target,g;l!=this;)g=l,l=l.parentNode;(l=g._fci)!==b&&(g._fci=b,g=d[l],e(g.event,g.element,g),a(c.target).trigger(c));c.stopPropagation()})}function Za(b,c,d){for(var e=0,g;e<b.length;e++)g=a(b[e]),g.width(Math.max(0,c-fb(g,d)))}function ob(b,c,d){for(var e=0,g;e<b.length;e++)g=a(b[e]),g.height(Math.max(0,c-Ya(g,d)))}function fb(b,c){var d;d=b;d=(parseFloat(a.curCSS(d[0],"paddingLeft",!0))||0)+
+(parseFloat(a.curCSS(d[0],"paddingRight",!0))||0);var e;e=b;e=(parseFloat(a.curCSS(e[0],"borderLeftWidth",!0))||0)+(parseFloat(a.curCSS(e[0],"borderRightWidth",!0))||0);d+=e;c?(e=b,e=(parseFloat(a.curCSS(e[0],"marginLeft",!0))||0)+(parseFloat(a.curCSS(e[0],"marginRight",!0))||0)):e=0;return d+e}function Ya(b,c){var d;d=b;d=(parseFloat(a.curCSS(d[0],"paddingTop",!0))||0)+(parseFloat(a.curCSS(d[0],"paddingBottom",!0))||0);var e;e=b;e=(parseFloat(a.curCSS(e[0],"borderTopWidth",!0))||0)+(parseFloat(a.curCSS(e[0],
+"borderBottomWidth",!0))||0);return d+e+(c?pb(b):0)}function pb(b){return(parseFloat(a.curCSS(b[0],"marginTop",!0))||0)+(parseFloat(a.curCSS(b[0],"marginBottom",!0))||0)}function Ka(a,b){b="number"==typeof b?b+"px":b;a.each(function(a,c){c.style.cssText+=";min-height:"+b+";_height:"+b})}function kb(){}function qb(a,b){return a-b}function Da(a){return(10>a?"0":"")+a}function cb(a,c){if(a[c]!==b)return a[c];c=c.split(/(?=[A-Z])/);for(var d=c.length-1,e;0<=d;d--)if(e=a[c[d].toLowerCase()],e!==b)return e;
+return a[""]}function Aa(a){return a.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/'/g,"&#039;").replace(/"/g,"&quot;").replace(/\n/g,"<br />")}function rb(a){return a.id+"/"+a.className+"/"+a.style.cssText.replace(/(^|;)\s*(top|left|width|height)\s*:[^;]*/ig,"")}function gb(a){a.attr("unselectable","on").css("MozUserSelect","none").bind("selectstart.ui",function(){return!1})}function ab(a){a.children().removeClass("fc-first fc-last").filter(":first-child").addClass("fc-first").end().filter(":last-child").addClass("fc-last")}
+function hb(a,b){a.each(function(a,c){c.className=c.className.replace(/^fc-\w*/,"fc-"+Lb[b.getDay()])})}function sb(a,b){var c=a.source||{},d=a.color,e=c.color,g=b("eventColor"),f=a.backgroundColor||d||c.backgroundColor||e||b("eventBackgroundColor")||g,d=a.borderColor||d||c.borderColor||e||b("eventBorderColor")||g;a=a.textColor||c.textColor||b("eventTextColor");b=[];f&&b.push("background-color:"+f);d&&b.push("border-color:"+d);a&&b.push("color:"+a);return b.join(";")}function La(b,c,d){a.isFunction(b)&&
+(b=[b]);if(b){var e,g;for(e=0;e<b.length;e++)g=b[e].apply(c,d)||g;return g}}function za(){for(var a=0;a<arguments.length;a++)if(arguments[a]!==b)return arguments[a]}function Mb(a,b){function c(a,b){b&&(r(a,b),a.setDate(1));a=k(a,!0);a.setDate(1);b=r(k(a),1);var l=k(a),n=k(b),q=e("firstDay"),da=e("weekends")?0:1;da&&(B(l),B(n,-1,!0));m(l,-((l.getDay()-Math.max(q,da)+7)%7));m(n,(7-n.getDay()+Math.max(q,da))%7);q=Math.round((n-l)/(7*mb));"fixed"==e("weekMode")&&(m(n,7*(6-q)),q=6);d.title=f(a,e("titleFormat"));
+d.start=a;d.end=b;d.visStart=l;d.visEnd=n;g(6,q,da?5:7,!0)}var d=this;d.render=c;ib.call(d,a,b,"month");var e=d.opt,g=d.renderBasic,f=b.formatDate}function Nb(a,b){function c(a,b){b&&m(a,7*b);a=m(k(a),-((a.getDay()-e("firstDay")+7)%7));b=m(k(a),7);var l=k(a),n=k(b),q=e("weekends");q||(B(l),B(n,-1,!0));d.title=f(l,m(k(n),-1),e("titleFormat"));d.start=a;d.end=b;d.visStart=l;d.visEnd=n;g(1,1,q?7:5,!1)}var d=this;d.render=c;ib.call(d,a,b,"basicWeek");var e=d.opt,g=d.renderBasic,f=b.formatDates}function Ob(a,
+b){function c(a,b){b&&(m(a,b),e("weekends")||B(a,0>b?-1:1));d.title=f(a,e("titleFormat"));d.start=d.visStart=k(a,!0);d.end=d.visEnd=m(k(d.start),1);g(1,1,1,!1)}var d=this;d.render=c;ib.call(d,a,b,"basicDay");var e=d.opt,g=d.renderBasic,f=b.formatDate}function ib(b,c,d){function e(c,d,f,k){G=d;ca=f;(y=F("isRTL"))?(ma=-1,ya=ca-1):(ma=1,ya=0);Na=F("firstDay");Oa=F("weekends")?0:1;ka=F("theme")?"ui":"fc";qa=F("columnFormat");if(d=!M){var m=ka+"-widget-header",n=ka+"-widget-content",R;f="<table class='fc-border-separate' style='width:100%' cellspacing='0'><thead><tr>";
+for(R=0;R<ca;R++)f+="<th class='fc- "+m+"'/>";f+="</tr></thead><tbody>";for(R=0;R<c;R++){f+="<tr class='fc-week"+R+"'>";for(m=0;m<ca;m++)f+="<td class='fc- "+n+" fc-day"+(R*ca+m)+"'><div>"+(k?"<div class='fc-day-number'/>":"")+"<div class='fc-day-content'><div style='position:relative'>&nbsp;</div></div></div></td>";f+="</tr>"}f+="</tbody></table>";c=a(f).appendTo(b);ea=c.find("thead");T=ea.find("th");M=c.find("tbody");C=M.find("tr");t=M.find("td");O=t.filter(":first-child");L=C.eq(0).find("div.fc-day-content div");
+ab(ea.add(ea.find("tr")));ab(C);C.eq(0).addClass("fc-first");t.click(v).mousedown(p);E=a("<div style='position:absolute;z-index:8;top:0;left:0'/>").appendTo(b)}else V();g(d)}function g(b){var c=b||1==G,d=x.start.getMonth(),e=oa(new Date),f,l,k;c&&T.each(function(b,c){f=a(c);l=Z(b);f.html(D(l,qa));hb(f,l)});t.each(function(b,g){f=a(g);l=Z(b);l.getMonth()==d?f.removeClass("fc-other-month"):f.addClass("fc-other-month");+l==+e?f.addClass(ka+"-state-highlight fc-today"):f.removeClass(ka+"-state-highlight fc-today");
+f.find("div.fc-day-number").text(l.getDate());c&&hb(f,l)});C.each(function(b,c){k=a(c);b<G?(k.show(),b==G-1?k.addClass("fc-last"):k.removeClass("fc-last")):k.hide()})}function f(b){la=b;b=la-ea.height();var c,d,e;"variable"==F("weekMode")?c=d=Math.floor(b/(1==G?2:6)):(c=Math.floor(b/G),d=b-c*(G-1));O.each(function(b,g){b<G&&(e=a(g),Ka(e.find("> div"),(b==G-1?d:c)-Ya(e)))})}function r(a){pa=a;Fa.clear();R=Math.floor(pa/ca);Za(T.slice(0,-1),R)}function v(a){if(!F("selectable")){var b=parseInt(this.className.match(/fc\-day(\d+)/)[1]),
+b=Z(b);ja("dayClick",this,b,!0,a)}}function X(a,b,c){c&&ha.build();c=k(x.visStart);for(var d=m(k(c),ca),e=0;e<G;e++){var g=new Date(Math.max(c,a)),f=new Date(Math.min(d,b));if(g<f){var l;y?(l=K(f,c)*ma+ya+1,g=K(g,c)*ma+ya+1):(l=K(g,c),g=K(f,c));g=H(e,l,e,g-1);g.click(v).mousedown(p)}m(c,7);m(d,7)}}function H(a,c,d,e){a=ha.rect(a,c,d,e,b);return Ba(a,b)}function n(a){return k(a)}function q(a,b){X(a,m(k(b),1),!0)}function J(){z()}function u(a,b,c){var d=U(a);ja("dayClick",t[d.row*ca+d.col],a,b,c)}function B(a,
+b){Ja.start(function(a){z();a&&H(a.row,a.col,a.row,a.col)},b)}function N(a,b,c){var d=Ja.stop();z();d&&(d=A(d),ja("drop",a,d,!0,b,c))}function I(a){return k(a.start)}function fa(a){return Fa.left(a)}function ga(a){return Fa.right(a)}function U(a){return{row:Math.floor(K(a,x.visStart)/7),col:P(a.getDay())}}function A(a){return S(a.row,a.col)}function S(a,b){return m(k(x.visStart),7*a+b*ma+ya)}function Z(a){return S(Math.floor(a/ca),a%ca)}function P(a){return(a-Math.max(Na,Oa)+ca)%ca*ma+ya}function Y(a){return C.eq(a)}
+function ba(){return{left:0,right:pa}}var x=this;x.renderBasic=e;x.setHeight=f;x.setWidth=r;x.renderDayOverlay=X;x.defaultSelectionEnd=n;x.renderSelection=q;x.clearSelection=J;x.reportDayClick=u;x.dragStart=B;x.dragStop=N;x.defaultEventEnd=I;x.getHoverListener=function(){return Ja};x.colContentLeft=fa;x.colContentRight=ga;x.dayOfWeekCol=P;x.dateCell=U;x.cellDate=A;x.cellIsAllDay=function(){return!0};x.allDayRow=Y;x.allDayBounds=ba;x.getRowCnt=function(){return G};x.getColCnt=function(){return ca};
+x.getColWidth=function(){return R};x.getDaySegmentContainer=function(){return E};xb.call(x,b,c,d);yb.call(x);zb.call(x);Pb.call(x);var F=x.opt,ja=x.trigger,V=x.clearEvents,Ba=x.renderOverlay,z=x.clearOverlays,p=x.daySelectionMousedown,D=c.formatDate,ea,T,M,C,t,O,L,E,pa,la,R,G,ca,ha,Ja,Fa,y,ma,ya,Na,Oa,ka,qa;gb(b.addClass("fc-grid"));ha=new Ab(function(b,c){var d,e,g;T.each(function(b,f){d=a(f);e=d.offset().left;b&&(g[1]=e);g=[e];c[b]=g});g[1]=e+d.outerWidth();C.each(function(c,f){c<G&&(d=a(f),e=d.offset().top,
+c&&(g[1]=e),g=[e],b[c]=g)});g[1]=e+d.outerHeight()});Ja=new Bb(ha);Fa=new Cb(function(a){return L.eq(a)})}function Pb(){function b(a,c){n(a);Z(d(a),c)}function c(){q();I().empty()}function d(b){var c=A(),e=S(),g=k(f.visStart),e=m(k(g),e),l=a.map(b,Ca),n,q,v,p,W,aa,r=[];for(n=0;n<c;n++){q=eb(db(b,l,g,e));for(v=0;v<q.length;v++)for(p=q[v],W=0;W<p.length;W++)aa=p[W],aa.row=n,aa.level=v,r.push(aa);m(g,7);m(e,7)}return r}function e(a,b,c){X(a)&&g(a,b);c.isEnd&&H(a)&&P(a,b,c);J(a,b)}function g(a,b){var c=
+fa(),d;b.draggable({zIndex:9,delay:50,opacity:r("dragOpacity"),revertDuration:r("dragRevertDuration"),start:function(e,g){v("eventDragStart",b,a,e,g);K(a,b);c.start(function(c,e,g,f){b.draggable("option","revert",!c||!g&&!f);U();c?(d=7*g+f*(r("isRTL")?-1:1),ga(m(k(a.start),d),m(Ca(a),d))):d=0},e,"drag")},stop:function(e,g){c.stop();U();v("eventDragStop",b,a,e,g);d?B(this,a,d,0,a.allDay,e,g):(b.css("filter",""),u(a,b))}})}var f=this;f.renderEvents=b;f.compileDaySegs=d;f.clearEvents=c;f.bindDaySeg=
+e;Db.call(f);var r=f.opt,v=f.trigger,X=f.isEventDraggable,H=f.isEventResizable,n=f.reportEvents,q=f.reportEventClear,J=f.eventElementHandlers,u=f.showEvents,K=f.hideEvents,B=f.eventDrop,I=f.getDaySegmentContainer,fa=f.getHoverListener,ga=f.renderDayOverlay,U=f.clearOverlays,A=f.getRowCnt,S=f.getColCnt,Z=f.renderDaySegs,P=f.resizableDayEvent}function Qb(a,b){function c(a,b){b&&m(a,7*b);a=m(k(a),-((a.getDay()-e("firstDay")+7)%7));b=m(k(a),7);var l=k(a),n=k(b),q=e("weekends");q||(B(l),B(n,-1,!0));d.title=
+f(l,m(k(n),-1),e("titleFormat"));d.start=a;d.end=b;d.visStart=l;d.visEnd=n;g(q?7:5)}var d=this;d.render=c;Eb.call(d,a,b,"agendaWeek");var e=d.opt,g=d.renderAgenda,f=b.formatDates}function Rb(a,b){function c(a,b){b&&(m(a,b),e("weekends")||B(a,0>b?-1:1));b=k(a,!0);var l=m(k(b),1);d.title=f(a,e("titleFormat"));d.start=d.visStart=b;d.end=d.visEnd=l;g(1)}var d=this;d.render=c;Eb.call(d,a,b,"agendaDay");var e=d.opt,g=d.renderAgenda,f=b.formatDate}function Eb(c,d,e){function g(b){ra=b;$a=D("theme")?"ui":
+"fc";Ka=D("weekends")?0:1;Ia=D("firstDay");(La=D("isRTL"))?(Ga=-1,Ha=ra-1):(Ga=1,Ha=0);Qa=Ea(D("minTime"));bb=Ea(D("maxTime"));Ta=D("columnFormat");if(la)T();else{b=$a+"-widget-header";var d=$a+"-widget-content",e,f,m,n,q,t=0==D("slotMinutes")%15;e="<table style='width:100%' class='fc-agenda-days fc-border-separate' cellspacing='0'><thead><tr><th class='fc-agenda-axis "+b+"'>&nbsp;</th>";for(f=0;f<ra;f++)e+="<th class='fc- fc-col"+f+" "+b+"'/>";e+="<th class='fc-agenda-gutter "+b+"'>&nbsp;</th></tr></thead><tbody><tr><th class='fc-agenda-axis "+
+b+"'>&nbsp;</th>";for(f=0;f<ra;f++)e+="<td class='fc- fc-col"+f+" "+d+"'><div><div class='fc-day-content'><div style='position:relative'>&nbsp;</div></div></div></td>";e+="<td class='fc-agenda-gutter "+d+"'>&nbsp;</td></tr></tbody></table>";la=a(e).appendTo(c);R=la.find("thead");G=R.find("th").slice(1,-1);ca=la.find("tbody");ha=ca.find("td").slice(0,-1);Ja=ha.find("div.fc-day-content div");Fa=ha.eq(0);y=Fa.find("> div");ab(R.add(R.find("tr")));ab(ca.add(ca.find("tr")));Ua=R.find("th:first");Va=la.find(".fc-agenda-gutter");
+ma=a("<div style='position:absolute;z-index:2;left:0;width:100%'/>").appendTo(c);D("allDaySlot")?(ya=a("<div style='position:absolute;z-index:8;top:0;left:0'/>").appendTo(ma),e="<table style='width:100%' class='fc-agenda-allday' cellspacing='0'><tr><th class='"+b+" fc-agenda-axis'>"+D("allDayText")+"</th><td><div class='fc-day-content'><div style='position:relative'/></div></td><th class='"+b+" fc-agenda-gutter'>&nbsp;</th></tr></table>",Na=a(e).appendTo(ma),Oa=Na.find("tr"),e=Oa.find("td"),e.click(u).mousedown(L),
+Ua=Ua.add(Na.find("th:first")),Va=Va.add(Na.find("th.fc-agenda-gutter")),ma.append("<div class='fc-agenda-divider "+b+"'><div class='fc-agenda-divider-inner'/></div>")):ya=a([]);ka=a("<div style='position:absolute;width:100%;overflow-x:hidden;overflow-y:auto'/>").appendTo(ma);qa=a("<div style='position:relative;width:100%;overflow:hidden'/>").appendTo(ka);tb=a("<div style='position:absolute;z-index:8;top:0;left:0'/>").appendTo(qa);e="<table class='fc-agenda-slots' style='width:100%' cellspacing='0'><tbody>";
+m=sa();n=H(k(m),bb);H(m,Qa);for(f=Aa=0;m<n;f++)q=m.getMinutes(),e+="<tr class='fc-slot"+f+" "+(q?"fc-minor":"")+"'><th class='fc-agenda-axis "+b+"'>"+(t&&q?"&nbsp;":pa(m,D("axisFormat")))+"</th><td class='"+d+"'><div style='position:relative'>&nbsp;</div></td></tr>",H(m,D("slotMinutes")),Aa++;e+="</tbody></table>";Ma=a(e).appendTo(qa);ub=Ma.find("div:first");b=Ma.find("td");b.click(u).mousedown(ja);Ua=Ua.add(Ma.find("th:first"))}f=oa(new Date);for(b=0;b<ra;b++)e=fa(b),d=G.eq(b),d.html(pa(e,Ta)),t=
+ha.eq(b),+e==+f?t.addClass($a+"-state-highlight fc-today"):t.removeClass($a+"-state-highlight fc-today"),hb(d.add(t),e)}function f(a,c){a===b&&(a=wb);wb=a;Ca={};var d=ca.position().top,e=ka.position().top;a=Math.min(a-d,Ma.height()+e+1);y.height(a-Ya(Fa));ma.css("top",d);ka.height(a-e-1);ta=ub.height()+1;c&&J()}function r(b){vb=b;za.clear();Pa=0;Za(Ua.width("").each(function(b,c){Pa=Math.max(Pa,a(c).outerWidth())}),Pa);b=ka[0].clientWidth;(xa=ka.width()-b)?(Za(Va,xa),Va.show().prev().removeClass("fc-last")):
+Va.hide().prev().addClass("fc-last");va=Math.floor((b-Pa)/ra);Za(G.slice(0,-1),va)}function J(){function a(){ka.scrollTop(d)}var b=sa(),c=k(b);c.setHours(D("firstHour"));var d=A(b,c)+1;a();setTimeout(a,0)}function v(){Da=ka.scrollTop()}function X(){ka.scrollTop(Da)}function u(a){if(!D("selectable")){var b=Math.min(ra-1,Math.floor((a.pageX-la.offset().left-Pa)/va)),c=fa(b),d=this.parentNode.className.match(/fc-slot(\d+)/);if(d){var d=parseInt(d[1])*D("slotMinutes"),e=Math.floor(d/60);c.setHours(e);
+c.setMinutes(d%60+Qa);ea("dayClick",ha[b],c,!1,a)}else ea("dayClick",ha[b],c,!0,a)}}function n(a,b,c){c&&Ra.build();var d=k(p.visStart);La?(c=K(b,d)*Ga+Ha+1,a=K(a,d)*Ga+Ha+1):(c=K(a,d),a=K(b,d));c=Math.max(0,c);a=Math.min(ra,a);c<a&&(a=q(0,c,0,a-1),a.click(u).mousedown(L))}function q(a,b,c,d){a=Ra.rect(a,b,c,d,ma);return M(a,ma)}function na(a,b){for(var c=k(p.visStart),d=m(k(c),1),e=0;e<ra;e++){var f=new Date(Math.max(c,a)),g=new Date(Math.min(d,b));if(f<g){var l=e*Ga+Ha,l=Ra.rect(0,l,0,l,qa),f=A(c,
+f),g=A(c,g);l.top=f;l.height=g-f;f=M(l,qa);f.click(u).mousedown(ja)}m(c,1);m(d,1)}}function B(a){return za.left(a)}function N(a){return za.right(a)}function ia(a){return{row:Math.floor(K(a,p.visStart)/7),col:U(a.getDay())}}function I(a){var b=fa(a.col);a=a.row;D("allDaySlot")&&a--;0<=a&&H(b,Qa+a*D("slotMinutes"));return b}function fa(a){return m(k(p.visStart),a*Ga+Ha)}function ga(a){return D("allDaySlot")&&!a.row}function U(a){return(a-Math.max(Ia,Ka)+ra)%ra*Ga+Ha}function A(a,c){a=k(a,!0);if(c<H(k(a),
+Qa))return 0;if(c>=H(k(a),bb))return Ma.height();a=D("slotMinutes");c=60*c.getHours()+c.getMinutes()-Qa;var d=Math.floor(c/a),e=Ca[d];e===b&&(e=Ca[d]=Ma.find("tr:eq("+d+") td div")[0].offsetTop);return Math.max(0,Math.round(e-1+c%a/a*ta))}function S(){return{left:Pa,right:vb-xa}}function Z(){return Oa}function P(a){var b=k(a.start);return a.allDay?b:H(b,D("defaultEventMinutes"))}function Y(a,b){return b?k(a):H(k(a),D("slotMinutes"))}function ba(a,b,c){c?D("allDaySlot")&&n(a,m(k(b),1),!0):x(a,b)}function x(b,
+c){var d=D("selectHelper");Ra.build();if(d){var e=K(b,p.visStart)*Ga+Ha;if(0<=e&&e<ra){var e=Ra.rect(0,e,0,e,qa),f=A(b,b),g=A(b,c);if(g>f){e.top=f;e.height=g-f;e.left+=2;e.width-=5;if(a.isFunction(d)){if(b=d(b,c))e.position="absolute",e.zIndex=8,wa=a(b).css(e).appendTo(qa)}else e.isStart=!0,e.isEnd=!0,wa=a(E({title:"",start:b,end:c,className:["fc-select-helper"],editable:!1},e)),wa.css("opacity",D("dragOpacity"));wa&&(wa.click(u).mousedown(ja),qa.append(wa),Za(wa,e.width,!0),ob(wa,e.height,!0))}}}else na(b,
+c)}function F(){C();wa&&(wa.remove(),wa=null)}function ja(b){if(1==b.which&&D("selectable")){O(b);var c;Wa.start(function(a,b){F();a&&a.col==b.col&&!ga(a)?(b=I(b),a=I(a),c=[b,H(k(b),D("slotMinutes")),a,H(k(a),D("slotMinutes"))].sort(qb),x(c[0],c[3])):c=null},b);a(document).one("mouseup",function(a){Wa.stop();c&&(+c[0]==+c[1]&&V(c[0],!1,a),t(c[0],c[3],!1,a))})}}function V(a,b,c){ea("dayClick",ha[U(a.getDay())],a,b,c)}function Ba(a,b){Wa.start(function(a){C();if(a)if(ga(a))q(a.row,a.col,a.row,a.col);
+else{a=I(a);var b=H(k(a),D("defaultEventMinutes"));na(a,b)}},b)}function z(a,b,c){var d=Wa.stop();C();d&&ea("drop",a,I(d),ga(d),b,c)}var p=this;p.renderAgenda=g;p.setWidth=r;p.setHeight=f;p.beforeHide=v;p.afterShow=X;p.defaultEventEnd=P;p.timePosition=A;p.dayOfWeekCol=U;p.dateCell=ia;p.cellDate=I;p.cellIsAllDay=ga;p.allDayRow=Z;p.allDayBounds=S;p.getHoverListener=function(){return Wa};p.colContentLeft=B;p.colContentRight=N;p.getDaySegmentContainer=function(){return ya};p.getSlotSegmentContainer=function(){return tb};
+p.getMinMinute=function(){return Qa};p.getMaxMinute=function(){return bb};p.getBodyContent=function(){return qa};p.getRowCnt=function(){return 1};p.getColCnt=function(){return ra};p.getColWidth=function(){return va};p.getSlotHeight=function(){return ta};p.defaultSelectionEnd=Y;p.renderDayOverlay=n;p.renderSelection=ba;p.clearSelection=F;p.reportDayClick=V;p.dragStart=Ba;p.dragStop=z;xb.call(p,c,d,e);yb.call(p);zb.call(p);Sb.call(p);var D=p.opt,ea=p.trigger,T=p.clearEvents,M=p.renderOverlay,C=p.clearOverlays,
+t=p.reportSelection,O=p.unselect,L=p.daySelectionMousedown,E=p.slotSegHtml,pa=d.formatDate,la,R,G,ca,ha,Ja,Fa,y,ma,ya,Na,Oa,ka,qa,tb,Ma,ub,Ua,Va,wa,vb,wb,Pa,va,xa,ta,Da,ra,Aa,Ra,Wa,za,Ca={},$a,Ia,Ka,La,Ga,Ha,Qa,bb,Ta;gb(c.addClass("fc-agenda"));Ra=new Ab(function(b,c){var d,e,f;G.each(function(b,g){d=a(g);e=d.offset().left;b&&(f[1]=e);f=[e];c[b]=f});f[1]=e+d.outerWidth();D("allDaySlot")&&(d=Oa,e=d.offset().top,b[0]=[e,e+d.outerHeight()]);for(var g=qa.offset().top,l=ka.offset().top,m=l+ka.outerHeight(),
+k=0;k<Aa;k++)b.push([Math.max(l,Math.min(m,g+ta*k)),Math.max(l,Math.min(m,g+ta*(k+1)))])});Wa=new Bb(Ra);za=new Cb(function(a){return Ja.eq(a)})}function Sb(){function c(d,l){I(d);var t,r=d.length,p=[],v=[];for(t=0;t<r;t++)d[t].allDay?p.push(d[t]):v.push(d[t]);q("allDaySlot")&&(ja(e(p),l),U());t=v;var r=Ba(),p=Y(),v=P(),y=H(k(n.visStart),p),C=a.map(t,f),T,z,O,M,Q,L,da=[];for(T=0;T<r;T++){O=z=eb(db(t,C,y,H(k(y),v-p)));var E=L=Q=M=void 0,D=void 0,V=void 0;for(M=O.length-1;0<M;M--)for(E=O[M],Q=0;Q<E.length;Q++)for(D=
+E[Q],L=0;L<O[M-1].length;L++)V=O[M-1][L],D.end>V.start&&D.start<V.end&&(V.forward=Math.max(V.forward||0,(D.forward||0)+1));for(O=0;O<z.length;O++)for(M=z[O],Q=0;Q<M.length;Q++)L=M[Q],L.col=T,L.level=O,da.push(L);m(y,1,!0)}t=da;var r=l,v=t.length,E="",X={},u={},A=S(),B,p=Ba();(D=q("isRTL"))?(V=-1,B=p-1):(V=1,B=0);for(p=0;p<v;p++)y=t[p],C=y.event,T=ba(y.start,y.start),z=ba(y.start,y.end),da=y.col,O=y.level,M=y.forward||0,Q=x(da*V+B),L=F(da*V+B)-Q,L=Math.min(L-6,.95*L),da=O?L/(O+M+1):M?2*(L/(M+1)-6):
+L,O=Q+L/(O+M+1)*O*V+(D?L-da:0),y.top=T,y.left=O,y.outerWidth=da,y.outerHeight=z-T,E+=g(C,y);A[0].innerHTML=E;D=A.children();for(p=0;p<v;p++)y=t[p],C=y.event,E=a(D[p]),V=na("eventRender",C,C,E),!1===V?E.remove():(V&&!0!==V&&(E.remove(),E=a(V).css({position:"absolute",top:y.top,left:y.left}).appendTo(A)),y.element=E,C._id===r?J(C,E,y):E[0]._fci=p,ea(C,E));nb(A,t,J);for(p=0;p<v;p++)if(y=t[p],E=y.element)C=X[r=y.key=rb(E[0])],y.vsides=C===b?X[r]=Ya(E,!0):C,C=u[r],y.hsides=C===b?u[r]=fb(E,!0):C,r=E.find("div.fc-event-content"),
+r.length&&(y.contentTop=r[0].offsetTop);for(p=0;p<v;p++)if(y=t[p],E=y.element)E[0].style.width=Math.max(0,y.outerWidth-y.hsides)+"px",X=Math.max(0,y.outerHeight-y.vsides),E[0].style.height=X+"px",C=y.event,y.contentTop!==b&&10>X-y.contentTop&&(E.find("div.fc-event-time").text(pa(C.start,q("timeFormat"))+" - "+C.title),E.find("div.fc-event-title").remove()),na("eventAfterRender",C,C,E)}function d(){fa();A().empty();S().empty()}function e(b){b=eb(db(b,a.map(b,Ca),n.visStart,n.visEnd));var c,d=b.length,
+f,g,l,k=[];for(c=0;c<d;c++)for(f=b[c],g=0;g<f.length;g++)l=f[g],l.row=0,l.level=c,k.push(l);return k}function f(a){return a.end?k(a.end):H(k(a.start),q("defaultEventMinutes"))}function g(a,b){var c="<",d=a.url,e=sb(a,q),f=e?" style='"+e+"'":"",l=["fc-event","fc-event-skin","fc-event-vert"];B(a)&&l.push("fc-event-draggable");b.isStart&&l.push("fc-corner-top");b.isEnd&&l.push("fc-corner-bottom");l=l.concat(a.className);a.source&&(l=l.concat(a.source.className||[]));c+=d?"a href='"+Aa(a.url)+"'":"div";
+c+=" class='"+l.join(" ")+"' style='position:absolute;z-index:8;top:"+b.top+"px;left:"+b.left+"px;"+e+"'><div class='fc-event-inner fc-event-skin'"+f+"><div class='fc-event-head fc-event-skin'"+f+"><div class='fc-event-time'>"+Aa(la(a.start,a.end,q("timeFormat")))+"</div></div><div class='fc-event-content'><div class='fc-event-title'>"+Aa(a.title)+"</div></div><div class='fc-event-bg'></div></div>";b.isEnd&&K(a)&&(c+="<div class='ui-resizable-handle ui-resizable-s'>=</div>");return c+="</"+(d?"a":
+"div")+">"}function r(a,b,c){B(a)&&v(a,b,c.isStart);c.isEnd&&K(a)&&V(a,b,c);ga(a,b)}function J(a,b,c){var d=b.find("div.fc-event-time");B(a)&&X(a,b,d);c.isEnd&&K(a)&&u(a,b,d);ga(a,b)}function v(a,b,c){function d(){g||(b.width(e).height("").draggable("option","grid",null),g=!0)}var e,f,g=!0,l,n=q("isRTL")?-1:1,t=Z(),r=z(),v=p(),E=Y();b.draggable({zIndex:9,opacity:q("dragOpacity","month"),revertDuration:q("dragRevertDuration"),start:function(p,C){na("eventDragStart",b,a,p,C);M(a,b);e=b.width();t.start(function(e,
+p,t,C){L();e?(f=!1,l=C*n,e.row?c?g&&(b.width(r-10),ob(b,v*Math.round((a.end?(a.end-a.start)/Tb:q("defaultEventMinutes"))/q("slotMinutes"))),b.draggable("option","grid",[r,1]),g=!1):f=!0:(O(m(k(a.start),l),m(Ca(a),l)),d()),f=f||g&&!l):(d(),f=!0);b.draggable("option","revert",f)},p,"drag")},stop:function(c,e){t.stop();L();na("eventDragStop",b,a,c,e);if(f)d(),b.css("filter",""),T(a,b);else{var k=0;g||(k=Math.round((b.offset().top-D().offset().top)/v)*q("slotMinutes")+E-(60*a.start.getHours()+a.start.getMinutes()));
+C(this,a,l,k,g,c,e)}}})}function X(a,b,c){function d(b){var e=H(k(a.start),b),f;a.end&&(f=H(k(a.end),b));c.text(la(e,f,q("timeFormat")))}function e(){g&&(c.css("display",""),b.draggable("option","grid",[W,Q]),g=!1)}var f,g=!1,l,n,t,r=q("isRTL")?-1:1,v=Z(),E=Ba(),W=z(),Q=p();b.draggable({zIndex:9,scroll:!1,grid:[W,Q],axis:1==E?"y":!1,opacity:q("dragOpacity"),revertDuration:q("dragRevertDuration"),start:function(d,p){na("eventDragStart",b,a,d,p);M(a,b);f=b.position();n=t=0;v.start(function(d,f,n,t){b.draggable("option",
+"revert",!d);L();d&&(l=t*r,q("allDaySlot")&&!d.row?(g||(g=!0,c.hide(),b.draggable("option","grid",null)),O(m(k(a.start),l),m(Ca(a),l))):e())},d,"drag")},drag:function(a,b){n=Math.round((b.position.top-f.top)/Q)*q("slotMinutes");n!=t&&(g||d(n),t=n)},stop:function(c,k){var m=v.stop();L();na("eventDragStop",b,a,c,k);m&&(l||n||g)?C(this,a,l,g?0:n,g,c,k):(e(),b.css("filter",""),b.css(f),d(0),T(a,b))}})}function u(a,b,c){var d,e,f=p();b.resizable({handles:{s:"div.ui-resizable-s"},grid:f,start:function(c,
+f){d=e=0;M(a,b);b.css("z-index",9);na("eventResizeStart",this,a,c,f)},resize:function(g,l){d=Math.round((Math.max(f,b.height())-l.originalSize.height)/f);d!=e&&(c.text(la(a.start,d||a.end?H(N(a),q("slotMinutes")*d):null,q("timeFormat"))),e=d)},stop:function(c,e){na("eventResizeStop",this,a,c,e);d?t(this,a,0,q("slotMinutes")*d,c,e):(b.css("z-index",8),T(a,b))}})}var n=this;n.renderEvents=c;n.compileDaySegs=e;n.clearEvents=d;n.slotSegHtml=g;n.bindDaySeg=r;Db.call(n);var q=n.opt,na=n.trigger,B=n.isEventDraggable,
+K=n.isEventResizable,N=n.eventEnd,I=n.reportEvents,fa=n.reportEventClear,ga=n.eventElementHandlers,U=n.setHeight,A=n.getDaySegmentContainer,S=n.getSlotSegmentContainer,Z=n.getHoverListener,P=n.getMaxMinute,Y=n.getMinMinute,ba=n.timePosition,x=n.colContentLeft,F=n.colContentRight,ja=n.renderDaySegs,V=n.resizableDayEvent,Ba=n.getColCnt,z=n.getColWidth,p=n.getSlotHeight,D=n.getBodyContent,ea=n.reportEventElement,T=n.showEvents,M=n.hideEvents,C=n.eventDrop,t=n.eventResize,O=n.renderDayOverlay,L=n.clearOverlays,
+E=n.calendar,pa=E.formatDate,la=E.formatDates}function xb(a,c,d){function e(a,b){a=F[a];return"object"==typeof a?cb(a,b||d):a}function f(a,b){return c.trigger.apply(c,[a,b||A].concat(Array.prototype.slice.call(arguments,2),[A]))}function g(a){return v(a)&&!e("disableDragging")}function r(a){return v(a)&&!e("disableResizing")}function v(a){return za(a.editable,(a.source||{}).editable,e("editable"))}function X(a){Y={};var b,c=a.length,d;for(b=0;b<c;b++)d=a[b],Y[d._id]?Y[d._id].push(d):Y[d._id]=[d]}
+function J(a){return a.end?k(a.end):S(a)}function n(a,b){ba.push(b);x[a._id]?x[a._id].push(b):x[a._id]=[b]}function q(){ba=[];x={}}function u(a,b){b.click(function(c){if(!b.hasClass("ui-draggable-dragging")&&!b.hasClass("ui-resizable-resizing"))return f("eventClick",this,a,c)}).hover(function(b){f("eventMouseover",this,a,b)},function(b){f("eventMouseout",this,a,b)})}function B(a,b){N(a,b,"show")}function K(a,b){N(a,b,"hide")}function N(a,b,c){a=x[a._id];var d,e=a.length;for(d=0;d<e;d++)if(!b||a[d][0]!=
+b[0])a[d][c]()}function I(a,b,c,d,e,g,l){var k=b.allDay,m=b._id;ga(Y[m],c,d,e);f("eventDrop",a,b,c,d,e,function(){ga(Y[m],-c,-d,k);P(m)},g,l);P(m)}function fa(a,b,c,d,e,g){var l=b._id;U(Y[l],c,d);f("eventResize",a,b,c,d,function(){U(Y[l],-c,-d);P(l)},e,g);P(l)}function ga(a,c,d,e){d=d||0;for(var f,g=a.length,l=0;l<g;l++)f=a[l],e!==b&&(f.allDay=e),H(m(f.start,c,!0),d),f.end&&(f.end=H(m(f.end,c,!0),d)),Z(f,F)}function U(a,b,c){c=c||0;for(var d,e=a.length,f=0;f<e;f++)d=a[f],d.end=H(m(J(d),b,!0),c),Z(d,
+F)}var A=this;A.element=a;A.calendar=c;A.name=d;A.opt=e;A.trigger=f;A.isEventDraggable=g;A.isEventResizable=r;A.reportEvents=X;A.eventEnd=J;A.reportEventElement=n;A.reportEventClear=q;A.eventElementHandlers=u;A.showEvents=B;A.hideEvents=K;A.eventDrop=I;A.eventResize=fa;var S=A.defaultEventEnd,Z=c.normalizeEvent,P=c.reportEventChange,Y={},ba=[],x={},F=c.options}function Db(){function c(a,b){var l=V(),k=A(),m=S(),n=0,q,p,x=a.length,u,G;l[0].innerHTML=d(a);e(a,l.children());q=a;G=q.length;var D,z;for(p=
+0;p<G;p++)D=q[p],(z=D.element)&&I(D.event,z);q=a;p=b;D=q.length;var B,F;for(G=0;G<D;G++)if(z=q[G],B=z.element)F=z.event,F._id===p?ia(F,B,z):B[0]._fci=G;nb(l,q,ia);f(a);g(a);r(a);b=H();for(l=0;l<k;l++){q=[];for(p=0;p<m;p++)q[p]=0;for(;n<x&&(u=a[n]).row==l;){p=q.slice(u.startCol,u.endCol);p=Math.max.apply(Math,p);u.top=p;p+=u.outerHeight;for(G=u.startCol;G<u.endCol;G++)q[G]=p;n++}b[l].height(Math.max.apply(Math,q))}J(a,v(b))}function d(a){var b=q("isRTL"),c,e=a.length,f,g,l,k;c=P();var m=c.left,n=c.right,
+p,r,v,Q,W,y="";for(c=0;c<e;c++)f=a[c],g=f.event,k=["fc-event","fc-event-skin","fc-event-hori"],K(g)&&k.push("fc-event-draggable"),b?(f.isStart&&k.push("fc-corner-right"),f.isEnd&&k.push("fc-corner-left"),p=x(f.end.getDay()-1),r=x(f.start.getDay()),v=f.isEnd?Y(p):m,Q=f.isStart?ba(r):n):(f.isStart&&k.push("fc-corner-left"),f.isEnd&&k.push("fc-corner-right"),p=x(f.start.getDay()),r=x(f.end.getDay()-1),v=f.isStart?Y(p):m,Q=f.isEnd?ba(r):n),k=k.concat(g.className),g.source&&(k=k.concat(g.source.className||
+[])),l=g.url,W=sb(g,q),y+=l?"<a href='"+Aa(l)+"'":"<div",y+=" class='"+k.join(" ")+"' style='position:absolute;z-index:8;left:"+v+"px;"+W+"'><div class='fc-event-inner fc-event-skin'"+(W?" style='"+W+"'":"")+">",!g.allDay&&f.isStart&&(y+="<span class='fc-event-time'>"+Aa(z(g.start,g.end,q("timeFormat")))+"</span>"),y+="<span class='fc-event-title'>"+Aa(g.title)+"</span></div>",f.isEnd&&N(g)&&(y+="<div class='ui-resizable-handle ui-resizable-"+(b?"w":"e")+"'>&nbsp;&nbsp;&nbsp;</div>"),y+="</"+(l?"a":
+"div")+">",f.left=v,f.outerWidth=Q-v,f.startCol=p,f.endCol=r+1;return y}function e(b,c){var d,f=b.length,g,l,k;for(d=0;d<f;d++)g=b[d],l=g.event,k=a(c[d]),l=B("eventRender",l,l,k),!1===l?k.remove():(l&&!0!==l&&(l=a(l).css({position:"absolute",left:g.left}),k.replaceWith(l),k=l),g.element=k)}function f(a){var c,d=a.length,e,g,l,k,m={};for(c=0;c<d;c++)if(e=a[c],g=e.element)l=e.key=rb(g[0]),k=m[l],k===b&&(k=m[l]=fb(g,!0)),e.hsides=k}function g(a){var b,c=a.length,d,e;for(b=0;b<c;b++)if(d=a[b],e=d.element)e[0].style.width=
+Math.max(0,d.outerWidth-d.hsides)+"px"}function r(a){var c,d=a.length,e,f,g,l,k={};for(c=0;c<d;c++)if(e=a[c],f=e.element)g=e.key,l=k[g],l===b&&(l=k[g]=pb(f)),e.outerHeight=f[0].offsetHeight+l}function H(){var a,b=A(),c=[];for(a=0;a<b;a++)c[a]=Z(a).find("td:first div.fc-day-content > div");return c}function v(a){var b,c=a.length,d=[];for(b=0;b<c;b++)d[b]=a[b][0].offsetTop;return d}function J(a,b){var c,d=a.length,e,f;for(c=0;c<d;c++)if(e=a[c],f=e.element)f[0].style.top=b[e.row]+(e.top||0)+"px",e=e.event,
+B("eventAfterRender",e,e,f)}function u(b,c,l){var t=q("isRTL"),x=t?"w":"e",z=c.find("div.ui-resizable-"+x),I=!1;gb(c);c.mousedown(function(a){a.preventDefault()}).click(function(a){I&&(a.preventDefault(),a.stopImmediatePropagation())});z.mousedown(function(q){function u(c){B("eventResizeStop",this,b,c);a("body").css("cursor","");z.stop();D();y&&U(this,b,y,0,c);setTimeout(function(){I=!1},0)}if(1==q.which){I=!0;var z=n.getHoverListener(),G=A(),K=S(),L=t?-1:1,N=t?K-1:0,Y=c.css("top"),y,P,Z=a.extend({},
+b),ba=F(b.start);ea();a("body").css("cursor",x+"-resize").one("mouseup",u);B("eventResizeStart",this,b,q);z.start(function(c,n){if(c){var q=Math.max(ba.row,c.row);c=c.col;1==G&&(q=0);q==ba.row&&(c=t?Math.min(ba.col,c):Math.max(ba.col,c));y=7*q+c*L+N-(7*n.row+n.col*L+N);n=m(oa(b),y,!0);if(y){Z.end=n;var q=P,u=ja([Z]),z=l.row,I=Y,A=a("<div/>"),B=V(),F=u.length,E;A[0].innerHTML=d(u);A=A.children();B.append(A);e(u,A);f(u);g(u);r(u);J(u,v(H()));A=[];for(B=0;B<F;B++)if(E=u[B].element)u[B].row===z&&E.css("top",
+I),A.push(E[0]);P=a(A);P.find("*").css("cursor",x+"-resize");q&&q.remove();ga(b)}else P&&(fa(b),P.remove(),P=null);D();p(b.start,m(k(n),1))}},q)}})}var n=this;n.renderDaySegs=c;n.resizableDayEvent=u;var q=n.opt,B=n.trigger,K=n.isEventDraggable,N=n.isEventResizable,oa=n.eventEnd,I=n.reportEventElement,fa=n.showEvents,ga=n.hideEvents,U=n.eventResize,A=n.getRowCnt,S=n.getColCnt,Z=n.allDayRow,P=n.allDayBounds,Y=n.colContentLeft,ba=n.colContentRight,x=n.dayOfWeekCol,F=n.dateCell,ja=n.compileDaySegs,V=
+n.getDaySegmentContainer,ia=n.bindDaySeg,z=n.calendar.formatDates,p=n.renderDayOverlay,D=n.clearOverlays,ea=n.clearSelection}function zb(){function b(a,e,f){c();e||(e=m(a,f));r(a,e,f);d(a,e,f)}function c(a){n&&(n=!1,u(),k("unselect",null,a))}function d(a,b,c,e){n=!0;k("select",null,a,b,c,e)}function e(b){var l=f.cellDate,k=f.cellIsAllDay,m=f.getHoverListener(),n=f.reportDayClick;if(1==b.which&&g("selectable")){c(b);var v;m.start(function(a,b){u();a&&k(a)?(v=[l(b),l(a)].sort(qb),r(v[0],v[1],!0)):v=
+null},b);a(document).one("mouseup",function(a){m.stop();v&&(+v[0]==+v[1]&&n(v[0],!0,a),d(v[0],v[1],!0,a))})}}var f=this;f.select=b;f.unselect=c;f.reportSelection=d;f.daySelectionMousedown=e;var g=f.opt,k=f.trigger,m=f.defaultSelectionEnd,r=f.renderSelection,u=f.clearSelection,n=!1;g("selectable")&&g("unselectAuto")&&a(document).mousedown(function(b){var d=g("unselectCancel");d&&a(b.target).parents(d).length||c(b)})}function yb(){function b(c,d){var g=f.shift();g||(g=a("<div class='fc-cell-overlay' style='position:absolute;z-index:3'/>"));
+g[0].parentNode!=d[0]&&g.appendTo(d);e.push(g.css(c).show());return g}function c(){for(var a;a=e.shift();)f.push(a.hide().unbind())}var d=this;d.renderOverlay=b;d.clearOverlays=c;var e=[],f=[]}function Ab(a){var b=this,c,d;b.build=function(){c=[];d=[];a(c,d)};b.cell=function(a,b){var e=c.length,f=d.length,g,l=-1,k=-1;for(g=0;g<e;g++)if(b>=c[g][0]&&b<c[g][1]){l=g;break}for(g=0;g<f;g++)if(a>=d[g][0]&&a<d[g][1]){k=g;break}return 0<=l&&0<=k?{row:l,col:k}:null};b.rect=function(a,b,e,f,g){g=g.offset();
+return{top:c[a][0]-g.top,left:d[b][0]-g.left,width:d[f][1]-d[b][0],height:c[e][1]-c[a][0]}}}function Bb(b){function c(a){a=b.cell(a.pageX,a.pageY);if(!a!=!k||a&&(a.row!=k.row||a.col!=k.col))a?(g||(g=a),f(a,g,a.row-g.row,a.col-g.col)):f(a,g),k=a}var d=this,e,f,g,k;d.start=function(d,m,r){f=d;g=k=null;b.build();c(m);e=r||"mousemove";a(document).bind(e,c)};d.stop=function(){a(document).unbind(e,c);return k}}function Cb(a){var c=this,d={},e={},f={};c.left=function(c){return e[c]=e[c]===b?(d[c]=d[c]||
+a(c)).position().left:e[c]};c.right=function(e){return f[e]=f[e]===b?c.left(e)+(d[e]=d[e]||a(e)).width():f[e]};c.clear=function(){d={};e={};f={}}}var Ia={defaultView:"month",aspectRatio:1.35,header:{left:"title",center:"",right:"today prev,next"},weekends:!0,allDayDefault:!0,ignoreTimezone:!0,lazyFetching:!0,startParam:"start",endParam:"end",titleFormat:{month:"MMMM yyyy",week:"MMM d[ yyyy]{ '&#8212;'[ MMM] d yyyy}",day:"dddd, MMM d, yyyy"},columnFormat:{month:"ddd",week:"ddd M/d",day:"dddd M/d"},
+timeFormat:{"":"h(:mm)t"},isRTL:!1,firstDay:0,monthNames:"January February March April May June July August September October November December".split(" "),monthNamesShort:"Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(" "),dayNames:"Sunday Monday Tuesday Wednesday Thursday Friday Saturday".split(" "),dayNamesShort:"Sun Mon Tue Wed Thu Fri Sat".split(" "),buttonText:{prev:"&nbsp;&#9668;&nbsp;",next:"&nbsp;&#9658;&nbsp;",prevYear:"&nbsp;&lt;&lt;&nbsp;",nextYear:"&nbsp;&gt;&gt;&nbsp;",today:"today",
+month:"month",week:"week",day:"day"},theme:!1,buttonIcons:{prev:"circle-triangle-w",next:"circle-triangle-e"},unselectAuto:!0,dropAccept:"*"},Ub={header:{left:"next,prev today",center:"",right:"title"},buttonText:{prev:"&nbsp;&#9658;&nbsp;",next:"&nbsp;&#9668;&nbsp;",prevYear:"&nbsp;&gt;&gt;&nbsp;",nextYear:"&nbsp;&lt;&lt;&nbsp;"},buttonIcons:{prev:"circle-triangle-e",next:"circle-triangle-w"}},ia=a.fullCalendar={version:"1.5"},va=ia.views={};a.fn.fullCalendar=function(c){if("string"==typeof c){var e=
+Array.prototype.slice.call(arguments,1),f;this.each(function(){var d=a.data(this,"fullCalendar");d&&a.isFunction(d[c])&&(d=d[c].apply(d,e),f===b&&(f=d),"destroy"==c&&a.removeData(this,"fullCalendar"))});return f!==b?f:this}var g=c.eventSources||[];delete c.eventSources;c.events&&(g.push(c.events),delete c.events);c=a.extend(!0,{},Ia,c.isRTL||c.isRTL===b&&Ia.isRTL?Ub:{},c);this.each(function(b,e){b=a(e);e=new d(b,c,g);b.data("fullCalendar",e);e.render()});return this};ia.sourceNormalizers=[];ia.sourceFetchers=
+[];var Gb={dataType:"json",cache:!1},Hb=1;ia.addDays=m;ia.cloneDate=k;ia.parseDate=u;ia.parseISO8601=xa;ia.parseTime=Ea;ia.formatDate=ta;ia.formatDates=Ta;var Lb="sun mon tue wed thu fri sat".split(" "),mb=864E5,Ib=36E5,Tb=6E4,Jb={s:function(a){return a.getSeconds()},ss:function(a){return Da(a.getSeconds())},m:function(a){return a.getMinutes()},mm:function(a){return Da(a.getMinutes())},h:function(a){return a.getHours()%12||12},hh:function(a){return Da(a.getHours()%12||12)},H:function(a){return a.getHours()},
+HH:function(a){return Da(a.getHours())},d:function(a){return a.getDate()},dd:function(a){return Da(a.getDate())},ddd:function(a,b){return b.dayNamesShort[a.getDay()]},dddd:function(a,b){return b.dayNames[a.getDay()]},M:function(a){return a.getMonth()+1},MM:function(a){return Da(a.getMonth()+1)},MMM:function(a,b){return b.monthNamesShort[a.getMonth()]},MMMM:function(a,b){return b.monthNames[a.getMonth()]},yy:function(a){return(a.getFullYear()+"").substring(2)},yyyy:function(a){return a.getFullYear()},
+t:function(a){return 12>a.getHours()?"a":"p"},tt:function(a){return 12>a.getHours()?"am":"pm"},T:function(a){return 12>a.getHours()?"A":"P"},TT:function(a){return 12>a.getHours()?"AM":"PM"},u:function(a){return ta(a,"yyyy-MM-dd'T'HH:mm:ss'Z'")},S:function(a){a=a.getDate();return 10<a&&20>a?"th":["st","nd","rd"][a%10-1]||"th"}};ia.applyAll=La;va.month=Mb;va.basicWeek=Nb;va.basicDay=Ob;c({weekMode:"fixed"});va.agendaWeek=Qb;va.agendaDay=Rb;c({allDaySlot:!0,allDayText:"all-day",firstHour:6,slotMinutes:30,
+defaultEventMinutes:120,axisFormat:"h(:mm)tt",timeFormat:{agenda:"h:mm{ - h:mm}"},dragOpacity:{agenda:.5},minTime:0,maxTime:24})})(jQuery);s.calendar=s.calendar||{};s.calendar.toCalendar=function(a,b,c){b=$.extend($.extend({},c||s.calendar.defaults),b);a=$(a);a.fullCalendar(b);return a};
+s.calendar.disableBeforeJune2012=function(a){var b=$(this);"Mon May 28 2012"==a.visStart.toDateString()||"Mon Apr 30 2012"==a.visStart.toDateString()?(b.find("#calender-prev-overlay").length||(a=b.find(".fc-button-prev").clone().attr({id:"calender-prev-overlay"}),b.find(".fc-header-left").prepend(a),b.find("#calender-prev-overlay").addClass("calender-prev-overlay-css")),b.find(".fc-button-prev").hide(),b.find("#calender-prev-overlay").show()):(b.find(".fc-button-prev").show(),b.find("#calender-prev-overlay").hide())};
+s.calendar.onDaySelect_=function(a,b,c){c&&(this.calendar.changeView("agendaDay"),this.calendar.gotoDate(a.getFullYear(),a.getMonth(),a.getDate()))};s.calendar.eventAfterRender=function(a,b){if(a.iconUrl){var c=$("<div></div>");c.addClass("fc-icon-preview");c.css("background-image","url("+a.iconUrl+")");c.prependTo(b.find(".fc-event-inner"))}};
+s.calendar.defaults={header:{left:"prev,next title",right:"today agendaDay,basicWeek,month"},defaultView:"basicWeek",height:600,editable:!1,firstDay:1,ignoreTimezone:!1,allDayDefault:!1,weekMode:"variable",allDaySlot:!0,firstHour:6,selectable:!0,select:s.calendar.onDaySelect_,timeFormat:{"":"h:mm tt"},eventAfterRender:s.calendar.eventAfterRender};
+s.calendar.agendaDefaults=$.extend($.extend({},s.calendar.defaults),{allDaySlot:!1,defaultView:"agendaWeek",header:{left:"prev,next title",right:"agendaDay,agendaWeek"},firstHour:9,height:500,eventAfterRender:null});var w={},Vb;w.format=function(a,b,c){return w.formatter(a,c)(b,c)};w.loadLocaleSymbols=function(a){w.symbols=a};w.FULL_FORMAT=0;w.LONG_FORMAT=1;w.MEDIUM_FORMAT=2;w.SHORT_FORMAT=3;w.DEFAULT_FORMAT=2;w.formatDate=function(a,b,c){c=w.resolveSymbols_(c);return w.format(c.DATEFORMATS[a],b,c)};w.getDateFormatter=function(a,b){b=w.resolveSymbols_(b);return w.formatter(b.DATEFORMATS[a],b)};w.formatTime=function(a,b,c){c=w.resolveSymbols_(c);return w.format(c.TIMEFORMATS[a],b,c)};
+w.getTimeFormatter=function(a,b){b=w.resolveSymbols_(b);return w.formatter(b.TIMEFORMATS[a],b)};w.formatDateTime=function(a,b,c){c=w.resolveSymbols_(c);return w.format(c.DATEFORMATS[a]+" "+c.TIMEFORMATS[a],b,c)};w.getDateTimeFormatter=function(a,b){b=w.resolveSymbols_(b);return w.formatter(b.DATEFORMATS[a]+" "+b.TIMEFORMATS[a],b)};w.TOKENS_=[/^\'(?:[^\']|\'\')*\'/,/^(?:G+|y+|M+|k+|S+|E+|a+|h+|K+|H+|c+|L+|Q+|d+|m+|s+|v+|z+|Z+)/,/^[^\'GyMkSEahKHcLQdmsvzZ]+/];
+w.formatter=function(a,b){b=w.resolveSymbols_(b);for(var c=[];a;)for(var d=0;d<w.TOKENS_.length;++d){var e=a.match(w.TOKENS_[d]);if(e){e=e[0];a=a.substring(e.length);0==d&&("''"==e?e="'":(e=e.substring(1,e.length-1),e=e.replace(/\'\'/,"'")));c.push({text:e,type:d});break}}return function(a){for(var d="",e=0;e<c.length;++e)if(1==c[e].type)var m=c[e].text,J=w.formatFunctions_[m.charAt(0)],d=d+J(m.length,a,b);else d+=c[e].text;return d}};w.ZEROES_="0000000000000000";
+w.zeroPaddingNumber_=function(a,b){for(var c=String(a);c.length<b;)c=w.ZEROES_.substring(0,Math.min(b-c.length,w.ZEROES_.length))+c;return c};w.formatEra_=function(a,b,c){b=0<b.getFullYear()?1:0;return 4<=a?c.ERANAMES[b]:c.ERAS[b]};w.formatYear_=function(a,b){var c=b.getFullYear();0>c&&(c=-c);return 2==a?w.zeroPaddingNumber_(c%100,2):String(c)};
+w.formatMonth_=function(a,b,c){b=b.getMonth();switch(a){case 5:return c.NARROWMONTHS[b];case 4:return c.MONTHS[b];case 3:return c.SHORTMONTHS[b];default:return w.zeroPaddingNumber_(b+1,a)}};w.format24Hours_=function(a,b){var c=b.getHours();return 0==c?w.zeroPaddingNumber_(24,a):w.zeroPaddingNumber_(c,a)};
+w.formatFractionalSeconds_=function(a,b){var c=b.getTime()%1E3;if(1==a)return String(Math.round(c/100));if(2==a)return c=Math.floor(c/10),w.zeroPaddingNumber_(c,2);c=w.zeroPaddingNumber_(c,3);3<a&&(c+=w.zeroPaddingNumber_(0,a-3));return c};w.formatDayOfWeek_=function(a,b,c){b=b.getDay();return 4<=a?c.WEEKDAYS[b]:c.SHORTWEEKDAYS[b]};w.formatAmPm_=function(a,b,c){return 12<=b.getHours()&&24>b.getHours()?c.AMPMS[1]:c.AMPMS[0]};
+w.format1To12Hours_=function(a,b){var c=b.getHours()%12;return 0==c?w.zeroPaddingNumber_(12,a):w.zeroPaddingNumber_(c,a)};w.format0To11Hours_=function(a,b){var c=b.getHours()%12;return w.zeroPaddingNumber_(c,a)};w.format0To23Hours_=function(a,b){var c=b.getHours();return w.zeroPaddingNumber_(c,a)};
+w.formatStandaloneDay_=function(a,b,c){b=b.getDay();switch(a){case 5:return c.STANDALONENARROWWEEKDAYS[b];case 4:return c.STANDALONEWEEKDAYS[b];case 3:return c.STANDALONESHORTWEEKDAYS[b];default:return w.zeroPaddingNumber_(b,1)}};w.formatStandaloneMonth_=function(a,b,c){b=b.getMonth();switch(a){case 5:return c.STANDALONENARROWMONTHS[b];case 4:return c.STANDALONEMONTHS[b];case 3:return c.STANDALONESHORTMONTHS[b];default:return w.zeroPaddingNumber_(b+1,a)}};
+w.formatQuarter_=function(a,b,c){b=Math.floor(b.getMonth()/3);return 4>a?c.SHORTQUARTERS[b]:c.QUARTERS[b]};w.formatDate_=function(a,b){var c=b.getDate();return w.zeroPaddingNumber_(c,a)};w.formatMinutes_=function(a,b){var c=b.getMinutes();return w.zeroPaddingNumber_(c,a)};w.formatSeconds_=function(a,b){var c=b.getSeconds();return w.zeroPaddingNumber_(c,a)};
+w.formatTimeZoneRFC_=function(a,b,c){return 4>a?(a=b.getTimezoneOffset(),b="-",0>a&&(a=-a,b="+"),a=a/3*5+a%60,b+w.zeroPaddingNumber_(a,4)):w.appendGMT_(a,b,c)};w.appendGMT_=function(a,b){var c=b.getTimezoneOffset(),d="";0<c?d+="GMT-":(c=-c,d+="GMT+");d+=w.zeroPaddingNumber_(c/60,2);d+=":";return d+=w.zeroPaddingNumber_(c%60,2)};
+w.formatFunctions_={G:w.formatEra_,y:w.formatYear_,M:w.formatMonth_,k:w.format24Hours_,S:w.formatFractionalSeconds_,E:w.formatDayOfWeek_,a:w.formatAmPm_,h:w.format1To12Hours_,K:w.format0To11Hours_,H:w.format0To23Hours_,c:w.formatStandaloneDay_,L:w.formatStandaloneMonth_,Q:w.formatQuarter_,d:w.formatDate_,m:w.formatMinutes_,s:w.formatSeconds_,v:w.appendGMT_,z:w.appendGMT_,Z:w.formatTimeZoneRFC_};w.resolveSymbols_=function(a){a||(w.symbols||(w.symbols=Vb),a=w.symbols);return a};s.connectedSites=s.connectedSites||{};s.connectedSites.fetchConnectedSites=function(a,b){a.each(function(a,d){var e=$(d).find(".data"),g=$(e).children("a").attr("href");g&&(g=0<=g.indexOf("?")?g+"&":g+"?",b&&(e.load=b),e.load(g+"site="+encodeURIComponent(d.id)))})};s.devsite.versionHash="";s.devsite.checkUrl="/_static/images/check.png";s.devsite.redXUrl="/_static/images/red_x.png";s.devsite.makeVersionedPath=function(a){if(a&&s.devsite.versionHash){var b="/_static/"+s.devsite.versionHash+"/";a=a.replace(/\/_static\//,b)}return a};s.devsite.showError=function(){};s.localInit=s.localInit||function(){};s.devsite.LoadFinished=function(){};s.devsite.CountedCallback=function(a){this.actualCallback_=a;this.count_=1};h=s.devsite.CountedCallback.prototype;h.count_=0;
+h.actualCallback_=0;h.GetCallback=function(){var a=this;this.count_+=1;return function(){a.finalCallback_()}};h.Release=function(){this.finalCallback_()};h.finalCallback_=function(){this.count_-=1;0==this.count_&&this.actualCallback_()};s.devsite.urlParams={};s.devsite.ParseUrlParams=function(a){var b=s.devsite.urlParams,c=/([^&=]+)=?([^&]*)/g,d;if(a)for(;d=c.exec(a.substring(1));)b[decodeURIComponent(d[1])]=decodeURIComponent(d[2]);return b};
+s.devsite.ReplaceHtmlChars=function(a){if(!a)return"";var b=/&/g,c=/</g,d=/>/g,e=/\"/g;return a.replace(b,"&amp;").replace(c,"&lt;").replace(d,"&gt;").replace(e,"&quot;")};s.devsite.hlParamPattern_=/(\?|&)hl=([a-z-]+)/i;s.devsite.GetHlValue_=function(a){if(a=s.devsite.hlParamPattern_.exec(a))return a[2]};
+s.devsite.AppendHlParam_=function(a,b){var c=/^#/i,d=/^[a-z]{2,6}:/i;if(c.test(a)||d.test(a)||s.devsite.hlParamPattern_.test(a))return a;c=null;d=a.split("#");1<d.length&&(a=d[0],c=d[1]);a=-1==a.indexOf("?")?a+"?hl="+b:a+"&hl="+b;return c?a+"#"+c:a};s.devsite.LocalizeHrefs=function(){var a=s.devsite.GetHlValue_(s.location.search);a&&"en"!=a&&$("a[href]").each(function(){var b=$(this).attr("href");$(this).attr("href",s.devsite.AppendHlParam_(b,a))})};
+s.devsite.QuickstartInit=function(){var a=s.location.protocol+"//quickstart-corp.corp.google.com";s.location.hostname.match(/\.google\.com$/)&&(a=s.location.protocol+"//developers.google.com");var b=a+"/qs/js/1/quickstart.js",c=a+"/qs/css/1/main.css",d=null;$("#goog-quickstart").each(function(){$(this).attr("data-base-uri",a+"/qs/");$("head").append('<link rel="stylesheet" type="text/css" href="'+c+'" />');d=b});return d};s.devsite.navigateTo=function(a){s.location.href=a};
+s.devsite.whatTimeIsIt=function(){return new Date};s.devsite.makePath=function(a){return a};s.devsite.embedForum_=function(){$("#gdf").each(function(a,b){var c=$(b).data("forum");if(void 0!=c){var d=$(b).data("domain");$(b).embedForum(c,{domain:d})}})};
+s.devsite.Init=function(a,b,c,d,e,g){c&&!/^\/[^/]*/.test(c)&&(c="");g&&(s.devsite.versionHash=g);s.devsite.makePath=function(a){c&&a.length&&"/"==a[0]&&(a=c+a);return a};c&&a("html").ajaxSend(function(a,b,c){c.url=s.devsite.makePath(c.url)});s.devsite.navigateTo=function(a){s.location.href=s.devsite.makePath(a)};a(function(){window.jstiming.load.tick("ol");var b=new s.devsite.CountedCallback(function(){window.jstiming.load.name="load";window.jstiming.load.tick("pst");window.jstiming.report(window.jstiming.load)});
+s.devsite.InitAnalytics();if(a.treelist){var c=s.devsite.getActiveNodeExpression(s.location.pathname);a("#gc-sidebar .gc-toc").treelist({activeSelector:c})}a("#gc-main .gc-toc li a, #gc-main .gc-toc li .tlw-title").tooltipize();a("#gc-header nav.primary a").bind("currentPageLink",function(){a(this).parent("li").addClass("active")});a.currentPageLink&&a("#gc-header nav.primary").currentPageLink();window.prettyPrint&&window.prettyPrint();window.hashgrid&&(window.grid=new window.hashgrid({}));s.devsite.embedForum_();
+s.devsite.RenderNativeDateTime();a("div.registration-field").each(function(a,b){s.devsite.prepareRegistrationField(b,s.devsite.handleRegistrationFieldEvent)});a(".registration-form").each(function(a,b){s.devsite.prepareRegistrationForm(b,document,window.location,s.devsite.handleRegistrationSubmit)});s.devsite.InitBackendHandlers();a(".kd-butterbar-dismiss").click(function(){var b=a(".kd-butterbar, .kd-butterbar-m");b.hasClass("shown")&&b.removeClass("shown");return!1});a("#embedded-explorer").each(function(){var b=
+window.location.protocol+"//"+window.location.host+"/oauthWindow";this.setAttribute("data-auth-popup",b);a.getScript("https://apis-explorer.appspot.com/embedded/com.google.api.explorer.Embedded.nocache.js")});var d=s.devsite.ParseUrlParams(window.location.search);a(".substitution").each(function(){var b=this.getAttribute("data-queryParam");b&&d[b]&&a(this).html(s.devsite.ReplaceHtmlChars(d[b]))});a(".expandable").each(function(b,c){a(c).expandable()});a("#gc-content .treelist").each(function(b,c){a(c).treelist()});
+(c=s.devsite.QuickstartInit())&&a.getScript(c);a("body").delegate(".google-feedback","click",function(){var b=a(this).data("p");if(!b)return!1;var b={productId:b,locale:a("#setlang select").val()},c=a(this).data("b");c&&(b.bucket=c);var c={},d=a(this).data("v");d&&(c.version=d);if(d=a(this).data("context"))c.context=d;userfeedback.api.startFeedback(b,c);return!1});s.devsite.LocalizeHrefs();s.localInit();b.Release()});e&&s.devsite.initContentWidgets(d||"en")};
+s.devsite.initContentWidgets=function(a){$(document).ready(function(){$(".carousel").carousel();$(".feed").rss();$(".feed-plain").rss();$(".oss").oss();$(".playground").playground();$(".cp-track").cloudtrack();s.framebox.Framebox.convertSrcs(a);s.github.Link.convertAnchors()})};
+s.devsite.RenderNativeDateTime=function(a){a=a||$("body");a.find(".native-timezone").each(function(){var a=$(this).data("format")||"M/d h:mm a",c=Date.parse($(this).data("datetime"));isNaN(c)||(c=new Date(c),a=w.format(a,c,{AMPMS:["a.m.","p.m."]}),$(this).html(a))});return a};s.devsite.InitBackendHandlers=function(){$("html").ajaxSend(Wb(document))};
+s.devsite.InitAnalytics=function(){var a=$(".gc-analytics"),b=$(".project-google-analytics-id");if(a.length||b.length){(function(a,b,c,d,m,J,H){a.GoogleAnalyticsObject=m;a[m]=a[m]||function(){(a[m].q=a[m].q||[]).push(arguments)};a[m].l=1*new Date;J=b.createElement(c);H=b.getElementsByTagName(c)[0];J.async=1;J.src=d;H.parentNode.insertBefore(J,H)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");if(a.length)for(var c=$(".signed-in").length?"Signed In":"Signed out",d=0;d<a.length;d++)window.ga("create",
+a[d].value,{cookieDomain:"developers.google.com",name:"siteTracker"+d}),window.ga("siteTracker"+d+".set","dimension1",c);if(b.length)for(d=0;d<b.length;d++)window.ga("create",b[d].value,{cookieDomain:"developers.google.com",name:"projectTracker"+d});window.ga(function(){for(var a=window.ga.getAll(),b=0;b<a.length;b++)a[b].send("pageview")});$(".gc-analytics-event").each(function(){s.devsite._addTrackingToElement($(this))});$("iframe.link-analytics").linkAnalyticsIframe()}};
+s.devsite._addTrackingToElement=function(a){var b=a.data("category");if(b){var c=a.data("action")||"click",d=a.data("label"),e=Number(a.data("value"));isNaN(e)&&(e=void 0);var g=void 0,f=a.attr("href"),r=f&&0!=f.indexOf("#")&&"_blank"!=a.attr("target");r&&(g=function(){s.location.href=f});a.click(function(){s.devsite._trackAnalyticsEvent(b,c,d,e,g);if(r)return!1})}};
+s.devsite._trackAnalyticsEvent=function(a,b,c,d,e){window.ga(function(){for(var g=window.ga.getAll(),f=[],r=0;r<g.length;r++){var m={eventCategory:a,eventAction:b,eventLabel:c,eventValue:d};e&&(f.push($.Deferred()),m.hitCallback=function(){f.pop().resolve()});g[r].send("event",m)}e&&$.when.apply(null,f).done(function(){e()})})};
+s.devsite.handlePlusBadgeResize=function(a,b){function c(){var c=b.width();c!=d&&(d=c,a.empty(),a.append('<div class="g-plus" data-href="https://plus.google.com/111395306401981598462" data-width="'+d+'" data-height="131" data-theme="light"></div>'),Xa&&Xa.plus&&Xa.plus.go&&Xa.plus.go())}var d;$(window).resize(function(){c()});c()};
+s.devsite.getActiveNodeExpression=function(a){var b=s.devsite.getNodeSelectorsFor(a);a.match("/$")?(b+=","+s.devsite.getNodeSelectorsFor(a.substring(0,a.length-1)),b+=","+s.devsite.getNodeSelectorsFor(a+"index.html")):b+=","+s.devsite.getNodeSelectorsFor(a+".html");return b};s.devsite.getNodeSelectorsFor=function(a){return'a[href="'+a+'"],a[href^="'+a+'?hl="]'};
+s.devsite.getCookie=function(a,b){var c=null;if(a.cookie&&""!=a.cookie)for(var d=a.cookie.split(";"),e=0;e<d.length;e++){var g=jQuery.trim(d[e]);if(g.substring(0,b.length+1)==b+"="){c=decodeURIComponent(g.substring(b.length+1));break}}return c};s.devsite.updateInputValidity=function(a){a=$(a);s.devsite.isInputValid(a)?(a.parent().removeClass("pending invalid"),a.parent().addClass("valid")):(a.parent().removeClass("pending valid"),a.parent().addClass("invalid"))};
+s.devsite.isInputValid=function(a){a=$(a);return!(a.hasClass("required")&&(null==a.val()||0==a.val().length))};s.devsite.handleRegistrationFieldEvent=function(a){s.devsite.updateInputValidity(a.target)};
+s.devsite.prepareRegistrationField=function(a,b){a=$(a);var c=a.find("input");c.change(b);c.keyup(b);a.addClass("pending");var c=s.devsite.makeVersionedPath(s.devsite.checkUrl),d=s.devsite.makeVersionedPath(s.devsite.redXUrl);a.append('<img class="valid" src="'+c+'"/><img class="invalid" src="'+d+'"/>')};
+s.devsite.handleRegistrationSubmit=function(a){a=$(a.target).find("div.registration-field input");for(var b=!0,c=0;c<a.length;c++)s.devsite.updateInputValidity(a[c]),b=b&&s.devsite.isInputValid(a[c]);return b};
+s.devsite.prepareRegistrationForm=function(a,b,c,d){a=$(a);a.append('<input type="hidden" name="csrfmiddlewaretoken">');b=s.devsite.getCookie(b,"csrftoken");a.find("input[name=csrfmiddlewaretoken]").val(b);a.submit(d);c=s.devsite.ParseUrlParams(c.search);c.eid&&a.attr("action","/events/register/"+encodeURI(c.eid)+"/")};function Wb(a){function b(b,d,e){/^http:.*/.test(e.url)||/^https:.*/.test(e.url)||d.setRequestHeader("X-CSRFToken",s.devsite.getCookie(a,"csrftoken"))}return b};s.search={KEY_ESC:27,fadeTime:s.KD_FADE_SHORT,keyDelay:300,timeoutId:null,autocompleteXhr:null,$query:null,$searchBox:null,$autocompleteBox:null,$button:null,$searchForm:null,locale:"en"};
+s.search.init=function(a,b){a&&(s.search.locale=a);s.search.$query=$("#q");b||s.search.$query.keyup(s.search.autocomplete);s.search.$searchBox=$("#searchbox");s.search.$button=$("#search-button");s.search.$autocompleteBox=$("#search-autocomplete");s.search.$searchForm=$(".gc-search");var c=$("#search_project");c.length&&s.search.addChip(c.data("project-name"),c.data("project-path"),c.data("query-match"));b&&(c=c.length&&c.data("project-path")||"",s.search.suggest.decorate(s.search.$query[0],String(c)))};
+s.search.autocomplete=function(a){s.search.timeoutId&&s.clearTimeout(s.search.timeoutId);if(!$("#search_project").length){var b=$(this).val();b&&a.keyCode!=s.search.KEY_ESC?s.search.timeoutId=s.setTimeout(function(){s.search.requestMatchingProjects(b)},s.search.keyDelay):s.search.removeDropDown()}};s.search.removeDropDown=function(){s.search.$autocompleteBox.fadeOut(s.search.fadeTime)};
+s.search.requestMatchingProjects=function(a){s.search.autocompleteXhr&&s.search.autocompleteXhr.abort();var b=s.progress.kennedyProgressDot(s.search.$searchBox);b.start();s.search.autocompleteXhr=$.get("/search/matchingprojects",{q:a},function(a){a&&(b.clear(),s.search.updateDropDown(a.trim()))});s.search.autocompleteXhr.always(function(){b.error()})};
+s.search.updateDropDown=function(a){s.search.$autocompleteBox.fadeOut(s.search.fadeTime,function(){s.search.$autocompleteBox.html(a);if(0!=a.length){var b=s.search.$searchBox.offset();s.search.$autocompleteBox.css({position:"absolute",top:b.top+s.search.$searchBox.outerHeight()+3,left:b.left});$("#restrict input").click(function(){var a=$(this);a.is(":checked")?s.search.addChip(a.data("project-name"),a.data("project-path"),$.trim(a.data("query-match"))):s.search.clearChip($("span.button.button-blue.mini"));
+s.search.removeDropDown();$("#q").focus()});s.search.$autocompleteBox.fadeIn(s.search.fadeTime)}})};
+s.search.addChip=function(a,b,c){var d=s.search.$query.val();s.search.$query.val(d.replace(c,""));var e=$("<span></span>");e.addClass("button button-blue mini");e.text(a);e.append("<pre>  X</pre>");e.data("query-match",c);s.search.$searchBox.prepend(e);e.click(function(){s.search.clearChip(e);s.search.$query.focus()});a=e.outerWidth(!0);s.search.redesignEnabled()||(c=s.search.$searchBox.width(),d=s.search.$searchBox.outerWidth(!0)+a+2,s.search.$searchBox.css("width",d+"px"),s.search.$query.css("width",
+c+"px"));c=s.search.$button.offset();s.search.redesignEnabled()||(c.left+=a+10);s.search.$button.offset(c);a=$("#search_project");a.length&&a.attr("value")!=b&&a.remove();a.length||(a=$("<input />"),a.attr({id:"search_project",type:"hidden",name:"p",value:b}),s.search.$searchForm.append(a))};
+s.search.clearChip=function(a){var b=a.outerWidth(!0),c=a.data("query-match");a.remove();$("#restrict input").prop("checked",!1);a=s.search.$query.val();s.search.$query.val((c+" "+a).trim());s.search.redesignEnabled()||(s.search.$searchBox.css("width",""),s.search.$query.css("width","100%"));c=s.search.$button.offset();s.search.redesignEnabled()||(c.left-=b+10);s.search.$button.offset(c);$("#search_project").remove()};
+s.search.loadRestrictedResults=function(){var a=s.devsite.ParseUrlParams(s.location.search);if(a=a.q){var a={q:a},b=$("#search_project");b.length&&(a.p=b.val());$.get("/search/restrictedresults",a,function(a){a&&$("#restrictedResults").append(a)})}};s.search.redesignEnabled=function(){return $("body").hasClass("slim")};s.search.suggest={};s.search.suggest.Category={PRODUCT:1,PAGE:2,REFERENCE:3};s.search.suggest.CATEGORY_ORDER=[s.search.suggest.Category.PAGE,s.search.suggest.Category.REFERENCE,s.search.suggest.Category.PRODUCT];s.search.suggest.CATEGORY_LIMITS={};
+s.search.suggest.decorate=function(a,b){s.search.suggest.CATEGORY_LIMITS[s.search.suggest.Category.PAGE]=20;s.search.suggest.CATEGORY_LIMITS[s.search.suggest.Category.REFERENCE]=40;s.search.suggest.CATEGORY_LIMITS[s.search.suggest.Category.PRODUCT]=10;return new s.search.SuggestInput(a,b)};s.search.suggest.searchData=[];
+s.search.SuggestInput=function(a,b){this.resultsBox_=null;this.searchInput_=a;this.projectPath_=b;this.lastQuery_="";this.initSearchData_(s.search.suggest.Category.PAGE);this.initSearchData_(s.search.suggest.Category.PRODUCT);this.initSearchData_(s.search.suggest.Category.REFERENCE);this.decorate_(a)};h=s.search.SuggestInput.prototype;
+h.decorate_=function(a){$(a).keyup($.proxy(this.handleKeyUp_,this));a=document.createElement("ul");a.className="suggest-results";document.body.appendChild(a);$(a).menu({select:$.proxy(this.handleItemSelect_,this)});this.resultsBox_=a;$(document).bind("click keypress",$.proxy(this.handleDocumentAction_,this));this.setResultsBoxVisible_(!1)};
+h.handleDocumentAction_=function(a){a.target==this.searchInput_||a.target==this.resultsBox_||$(this.resultsBox_).has(a.target).length||$(this.searchInput_).has(a.target).length||this.setResultsBoxVisible_(!1)};h.initSearchData_=function(a){var b={hl:s.search.locale||"en"};if(a==s.search.suggest.Category.PAGE||a==s.search.suggest.Category.REFERENCE){if(!this.projectPath_)return;b.p=this.projectPath_}b.c=a;a=$.proxy(this.handleJsonResponse_,this,a);this.requestSearchData_(b,a)};
+h.requestSearchData_=function(a,b){$.get("/search/getsuggestions",a,b)};h.handleJsonResponse_=function(a,b){b&&(s.search.suggest.searchData[a]=b)};h.getSearchData_=function(a){return s.search.suggest.searchData[a]};h.handleKeyUp_=function(a){a.keyCode==$.ui.keyCode.DOWN?$(this.resultsBox_).focus():a.keyCode==$.ui.keyCode.ESCAPE?this.setResultsBoxVisible_(!1):(a=this.searchInput_.value.trim(),a!=this.lastQuery_&&(this.lastQuery_=a,this.updateUi_(a)))};
+h.handleItemSelect_=function(a,b){$(b.item).hasClass("suggest-all-results")&&this.performFullSiteSearch_();var c=$(b.item).find("a");s.devsite.navigateTo($(c).attr("href"))};h.performFullSiteSearch_=function(){$(".gc-search").submit()};
+h.updateUi_=function(a){this.resultsBox_.innerHTML="";var b=!1,c=[],d;for(d in s.search.suggest.Category){var e=s.search.suggest.Category[d],g=this.getSearchData_(e);g&&(c[e]=g)}if(a&&c.length)for(d=this.tokenize_(a.toLowerCase()),e=0;e<s.search.suggest.CATEGORY_ORDER.length;e++){var f=s.search.suggest.CATEGORY_ORDER[e];if(c[f]&&(g=this.sortResults_(c[f],d,f),g.length)){b=!0;this.resultsBox_.appendChild(this.renderCategoryDivider_(f));for(var f=s.search.suggest.CATEGORY_LIMITS[f],r=0;r<g.length&&
+r<f;r++){var m=this.renderSuggestion_(g[r],d);this.resultsBox_.appendChild(m)}}}this.resultsBox_.appendChild(this.renderAllResultsItem_(a));this.setResultsBoxVisible_(b)};
+h.renderCategoryDivider_=function(a){var b=document.createElement("li");b.className="suggest-category";a==s.search.suggest.Category.PAGE?b.innerHTML="<span>"+gettext("Pages")+"</span>":a==s.search.suggest.Category.PRODUCT?b.innerHTML="<span>"+gettext("Products")+"</span>":a==s.search.suggest.Category.REFERENCE&&(b.innerHTML="<span>"+gettext("Reference")+"</span>");return b};
+h.renderAllResultsItem_=function(a){var b=document.createElement("li");b.className="suggest-all-results";b.innerHTML='<a href="#">'+gettext("See all results for ")+'"'+a+'"</span>';return b};
+h.renderSuggestion_=function(a,b){for(var c=document.createElement("li"),d=a.title,e=d.toLowerCase(),g=[],f=0;f<b.length;f++){var r=e.indexOf(b[f]),m=-1;if(-1<r)for(m=r+b[f].length;r<m;r++)g[r]=!0}e=[];m=!1;for(f=0;f<d.length;f++)!m&&g[f]&&(m=!0,e.push("<b>")),m&&!g[f]&&(m=!1,e.push("</b>")),e.push(d[f]);m&&e.push("</b>");c.innerHTML='<a href="'+a.path+'">'+e.join("")+"</a>";return c};
+h.setResultsBoxVisible_=function(a){a?($(this.resultsBox_).width($("#searchbox").width()),$(this.resultsBox_).menu("refresh"),$(this.resultsBox_).show(),$(this.resultsBox_).position({my:"left top",at:"left bottom-1",of:"#searchbox",collision:"noneElement"})):$(this.resultsBox_).hide()};
+h.sortResults_=function(a,b,c){for(var d=0;d<a.length;d++)for(var e=a[d],g=e.score=0;g<b.length;g++){var f=b[g],r=!1,m=e.title.toLowerCase().indexOf(f);if(-1<m){r=!0;e.score+=1;var J=0,J=c==s.search.suggest.Category.REFERENCE?m/e.title.length:(e.title.length-m)/e.title.length;e.score+=J;m=f.length/e.title.length;e.score+=m}for(m=0;m<e.keywords.length;m++)e.keywords[m].toLowerCase()==f&&(e.score+=.25,r=!0);r||(e.score-=1E3)}return a.filter(this.filterResult_).sort(this.compareResult_)};
+h.compareResult_=function(a,b){return b.score-a.score};h.filterResult_=function(a){return 0<a.score};h.tokenize_=function(a){return a.split(/\s*\b\s*/)};
+ })();
+
+  if (window.jQuery) {
+    $(document).ready(function() {
+      if (window.devsite && window.devsite.search) {
+        window.devsite.search.init('en')
+      }
+    });
+  }
+</script>
+
+        
+      
+      
+    </div><!-- end div.sandbar -->
+    
+
+    
+    <div id="gc-wrapper" itemscope itemtype="http://schema.org/Article">
+      
+        
+          <input class="gc-analytics" type="hidden" value="UA-24532603-1" />
+        
+          <input class="gc-analytics" type="hidden" value="UA-49880327-1" />
+        
+      
+
+      
+      
+
+<div id="gc-appnav">
+  <ol class="breadcrumbs">
+    
+    <li><a href="/products/">Products</a></li>
+    
+    <li><a href="/maps/">Google Maps API</a></li>
+    
+    <li><a href="/maps/documentation/javascript">Google Maps JavaScript API v3</a></li>
+    
+  </ol>
+</div>
+
+
+
+      
+      
+      
+        
+          <div class="maia-aux" id="gc-appbar">
+        
+
+          
+          
+
+<h1><a href="/maps/documentation/javascript">Google Maps JavaScript API v3</a></h1>
+
+
+
+<div class="plusone-container" style="height:27px">
+  <div class="g-plusone"
+    data-href="https://developers.google.com/maps/documentation/javascript/examples/map-simple"
+    data-size="medium"
+    data-source="google:developers"></div>
+</div>
+
+
+
+<div class="google-feedback-container">
+  
+  <a href="" class="google-feedback" data-p="81777" data-b="" data-context="Maps JS API v3">Feedback on this document</a>
+</div>
+
+
+
+ 
+
+          
+        </div>
+      
+      
+
+      
+        
+          <div id="gc-main" class="main">
+        
+        
+  
+  
+      
+      
+      <div id="gc-sidebar">
+        
+
+  
+
+
+
+  <nav class="gc-toc"><ul><li class=""><span class="tlw-title" data-title="Developer&#39;s Guide">Developer&#39;s Guide</span><ul><li class=""><a href="/maps/documentation/javascript/tutorial" title="Getting Started" data-title="Getting Started"><span>Getting Started</span></a></li><li class=""><a href="/maps/documentation/javascript/usage" title="Usage Limits and Billing" data-title="Usage Limits and Billing"><span>Usage Limits and Billing</span></a></li><li class=""><a href="/maps/documentation/javascript/basics" title="Concepts" data-title="Concepts"><span>Concepts</span></a></li><li class=""><a href="/maps/documentation/javascript/events" title="Events" data-title="Events"><span>Events</span></a></li><li class=""><a href="/maps/documentation/javascript/controls" title="Controls" data-title="Controls"><span>Controls</span></a></li><li class=""><a href="/maps/documentation/javascript/styling" title="Styles" data-title="Styles"><span>Styles</span></a></li><li class=""><a href="/maps/documentation/javascript/overlays" title="Drawing on the Map" data-title="Drawing on the Map"><span>Drawing on the Map</span></a><ul><li class=""><a href="/maps/documentation/javascript/markers" title="Markers" data-title="Markers"><span>Markers</span></a></li><li class=""><a href="/maps/documentation/javascript/infowindows" title="Info Windows" data-title="Info Windows"><span>Info Windows</span></a></li><li class=""><a href="/maps/documentation/javascript/shapes" title="Shapes" data-title="Shapes"><span>Shapes</span></a></li><li class=""><a href="/maps/documentation/javascript/symbols" title="Symbols" data-title="Symbols"><span>Symbols</span></a></li><li class=""><a href="/maps/documentation/javascript/groundoverlays" title="Ground Overlays" data-title="Ground Overlays"><span>Ground Overlays</span></a></li><li class=""><a href="/maps/documentation/javascript/customoverlays" title="Custom Overlays" data-title="Custom Overlays"><span>Custom Overlays</span></a></li></ul></li><li class=""><a href="/maps/documentation/javascript/layers" title="Layers" data-title="Layers"><span>Layers</span></a><ul><li class=""><a href="/maps/documentation/javascript/datalayer" title="Data" data-title="Data"><span>Data</span></a></li><li class=""><a href="/maps/documentation/javascript/fusiontableslayer" title="Fusion Tables" data-title="Fusion Tables"><span>Fusion Tables</span></a></li><li class=""><a href="/maps/documentation/javascript/heatmaplayer" title="Heatmap" data-title="Heatmap"><span>Heatmap</span></a></li><li class=""><a href="/maps/documentation/javascript/kmllayer" title="KML and GeoRSS" data-title="KML and GeoRSS"><span>KML and GeoRSS</span></a></li><li class=""><a href="/maps/documentation/javascript/mapsenginelayers" title="Maps Engine" data-title="Maps Engine"><span>Maps Engine</span></a></li><li class=""><a href="/maps/documentation/javascript/trafficlayer" title="Traffic, Transit and Bicycling Layer" data-title="Traffic, Transit and Bicycling Layer"><span>Traffic, Transit and Bicycling Layer</span></a></li><li class="deprecated"><a href="/maps/documentation/javascript/panoramiolayer" title="Panoramio" data-title="Panoramio"><span>Panoramio<sup>Deprecated</sup></span></a></li><li class="deprecated"><a href="/maps/documentation/javascript/weatherlayer" title="Weather and Cloud" data-title="Weather and Cloud"><span>Weather and Cloud<sup>Deprecated</sup></span></a></li></ul></li><li class=""><a href="/maps/documentation/javascript/maptypes" title="Map Types" data-title="Map Types"><span>Map Types</span></a></li><li class=""><span class="tlw-title" data-title="Services">Services</span><ul><li class=""><a href="/maps/documentation/javascript/directions" title="Directions" data-title="Directions"><span>Directions</span></a></li><li class=""><a href="/maps/documentation/javascript/distancematrix" title="Distance Matrix" data-title="Distance Matrix"><span>Distance Matrix</span></a></li><li class=""><a href="/maps/documentation/javascript/elevation" title="Elevation" data-title="Elevation"><span>Elevation</span></a></li><li class=""><a href="/maps/documentation/javascript/geocoding" title="Geocoding" data-title="Geocoding"><span>Geocoding</span></a></li><li class=""><a href="/maps/documentation/javascript/maxzoom" title="Maximum Zoom Imagery" data-title="Maximum Zoom Imagery"><span>Maximum Zoom Imagery</span></a></li><li class=""><a href="/maps/documentation/javascript/streetview" title="Street View" data-title="Street View"><span>Street View</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="Libraries">Libraries</span><ul><li class=""><a href="/maps/documentation/javascript/libraries" title="Overview" data-title="Overview"><span>Overview</span></a></li><li class=""><a href="/maps/documentation/javascript/advertising" title="AdSense Library" data-title="AdSense Library"><span>AdSense Library</span></a></li><li class=""><a href="/maps/documentation/javascript/drawinglayer" title="Drawing Library" data-title="Drawing Library"><span>Drawing Library</span></a></li><li class=""><a href="/maps/documentation/javascript/geometry" title="Geometry Library" data-title="Geometry Library"><span>Geometry Library</span></a></li><li class=""><a href="/maps/documentation/javascript/places" title="Places Library" data-title="Places Library"><span>Places Library</span></a><ul><li class=""><a href="/maps/documentation/javascript/places-autocomplete" title="Autocomplete for Addresses and Search" data-title="Autocomplete for Addresses and Search"><span>Autocomplete for Addresses and Search</span></a></li></ul></li><li class=""><a href="/maps/documentation/javascript/visualization" title="Visualization Library" data-title="Visualization Library"><span>Visualization Library</span></a></li><li class="deprecated"><a href="/maps/documentation/javascript/panoramiolayer" title="Panoramio Library" data-title="Panoramio Library"><span>Panoramio Library<sup>Deprecated</sup></span></a></li><li class="deprecated"><a href="/maps/documentation/javascript/weatherlayer" title="Weather Library" data-title="Weather Library"><span>Weather Library<sup>Deprecated</sup></span></a></li></ul></li></ul></li><li class=""><a href="/maps/documentation/javascript/reference" title="API Reference" data-title="API Reference"><span>API Reference</span></a><ul><li class=""><a href="/maps/documentation/javascript/3.exp/reference" title="3.exp (3.17)" data-title="3.exp (3.17)"><span>3.exp (3.17)</span></a></li><li class=""><a href="/maps/documentation/javascript/reference" title="Release (3.16)" data-title="Release (3.16)"><span>Release (3.16)</span></a></li><li class=""><a href="/maps/documentation/javascript/3.15/reference" title="Frozen (3.15)" data-title="Frozen (3.15)"><span>Frozen (3.15)</span></a></li></ul></li><li class=""><a href="/maps/documentation/javascript/examples/" title="Code Samples" data-title="Code Samples"><span>Code Samples</span></a><ul><li class=""><span class="tlw-title" data-title="Basics">Basics</span><ul><li class=""><a href="/maps/documentation/javascript/examples/map-simple" title="Simple map" data-title="Simple map"><span>Simple map</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/map-coordinates" title="Showing pixel and tile coordinates" data-title="Showing pixel and tile coordinates"><span>Showing pixel and tile coordinates</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/map-geolocation" title="Geolocation" data-title="Geolocation"><span>Geolocation</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/map-language" title="Localizing the map" data-title="Localizing the map"><span>Localizing the map</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/map-rtl" title="Right-to-left languages" data-title="Right-to-left languages"><span>Right-to-left languages</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/map-simple-async" title="Asynchronous loading" data-title="Asynchronous loading"><span>Asynchronous loading</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/map-projection-simple" title="Custom map projections" data-title="Custom map projections"><span>Custom map projections</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="Events">Events</span><ul><li class=""><a href="/maps/documentation/javascript/examples/event-simple" title="Simple click event" data-title="Simple click event"><span>Simple click event</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/event-closure" title="Using closures in event listeners" data-title="Using closures in event listeners"><span>Using closures in event listeners</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/event-arguments" title="Accessing arguments in UI events" data-title="Accessing arguments in UI events"><span>Accessing arguments in UI events</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/event-properties" title="Getting properties with event handlers" data-title="Getting properties with event handlers"><span>Getting properties with event handlers</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/event-domListener" title="Listening to DOM events" data-title="Listening to DOM events"><span>Listening to DOM events</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="Controls">Controls</span><ul><li class=""><a href="/maps/documentation/javascript/examples/control-disableUI" title="Disabling the default UI" data-title="Disabling the default UI"><span>Disabling the default UI</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/control-simple" title="Adding controls to the map" data-title="Adding controls to the map"><span>Adding controls to the map</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/control-options" title="Control options" data-title="Control options"><span>Control options</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/control-positioning" title="Control positioning" data-title="Control positioning"><span>Control positioning</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/control-custom" title="Custom controls" data-title="Custom controls"><span>Custom controls</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/control-custom-state" title="Adding state to controls" data-title="Adding state to controls"><span>Adding state to controls</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="Styles">Styles</span><ul><li class=""><a href="/maps/documentation/javascript/examples/maptype-styled-simple" title="Simple styled maps" data-title="Simple styled maps"><span>Simple styled maps</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/maptype-styled-complex" title="Complex styled maps" data-title="Complex styled maps"><span>Complex styled maps</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="Drawing on the Map">Drawing on the Map</span><ul><li class=""><a href="/maps/documentation/javascript/examples/marker-simple" title="Simple markers" data-title="Simple markers"><span>Simple markers</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/marker-remove" title="Removing markers" data-title="Removing markers"><span>Removing markers</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/icon-simple" title="Simple marker icons" data-title="Simple marker icons"><span>Simple marker icons</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/icon-complex" title="Complex marker icons" data-title="Complex marker icons"><span>Complex marker icons</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/marker-animations" title="Marker animations" data-title="Marker animations"><span>Marker animations</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/marker-animations-iteration" title="Marker animations with setTimeout()" data-title="Marker animations with setTimeout()"><span>Marker animations with setTimeout()</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/infowindow-simple" title="Info windows" data-title="Info windows"><span>Info windows</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/infowindow-simple-max" title="Info windows with maxWidth" data-title="Info windows with maxWidth"><span>Info windows with maxWidth</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/polyline-simple" title="Simple polylines" data-title="Simple polylines"><span>Simple polylines</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/polyline-remove" title="Removing polylines" data-title="Removing polylines"><span>Removing polylines</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/polyline-complex" title="Complex polylines" data-title="Complex polylines"><span>Complex polylines</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/polygon-simple" title="Simple polygons" data-title="Simple polygons"><span>Simple polygons</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/polygon-arrays" title="Polygon arrays" data-title="Polygon arrays"><span>Polygon arrays</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/polygon-autoclose" title="Polygon auto-completion" data-title="Polygon auto-completion"><span>Polygon auto-completion</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/circle-simple" title="Circles" data-title="Circles"><span>Circles</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/rectangle-simple" title="Rectangles" data-title="Rectangles"><span>Rectangles</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/rectangle-zoom" title="Rectangle zoom" data-title="Rectangle zoom"><span>Rectangle zoom</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/user-editable-shapes" title="User-editable shapes" data-title="User-editable shapes"><span>User-editable shapes</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/polygon-draggable" title="Draggable polygons" data-title="Draggable polygons"><span>Draggable polygons</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/rectangle-event" title="Listening to events" data-title="Listening to events"><span>Listening to events</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/groundoverlay-simple" title="Ground overlays" data-title="Ground overlays"><span>Ground overlays</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/overlay-remove" title="Removing overlays" data-title="Removing overlays"><span>Removing overlays</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/overlay-simple" title="Custom overlays" data-title="Custom overlays"><span>Custom overlays</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/overlay-hideshow" title="Showing/hiding overlays" data-title="Showing/hiding overlays"><span>Showing/hiding overlays</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/marker-symbol-predefined" title="Predefined marker symbols" data-title="Predefined marker symbols"><span>Predefined marker symbols</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/marker-symbol-custom" title="Custom marker symbols" data-title="Custom marker symbols"><span>Custom marker symbols</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/overlay-symbol-animate" title="Animated symbols" data-title="Animated symbols"><span>Animated symbols</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/overlay-symbol-arrow" title="Arrows (symbols)" data-title="Arrows (symbols)"><span>Arrows (symbols)</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/overlay-symbol-custom" title="Custom symbols on a line" data-title="Custom symbols on a line"><span>Custom symbols on a line</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/overlay-symbol-dashed" title="Dashed lines (symbols)" data-title="Dashed lines (symbols)"><span>Dashed lines (symbols)</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="Layers">Layers</span><ul><li class=""><a href="/maps/documentation/javascript/examples/layer-kml" title="KML layers" data-title="KML layers"><span>KML layers</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-kml-features" title="KML feature details" data-title="KML feature details"><span>KML feature details</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-data-simple" title="Data layer: Simple" data-title="Data layer: Simple"><span>Data layer: Simple</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-data-style" title="Data layer styling" data-title="Data layer styling"><span>Data layer styling</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-data-event" title="Data layer event handling" data-title="Data layer event handling"><span>Data layer event handling</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-data-dynamic" title="Data layer dynamic styling" data-title="Data layer dynamic styling"><span>Data layer dynamic styling</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-data-dragndrop" title="Data layer: Drag and Drop GeoJSON" data-title="Data layer: Drag and Drop GeoJSON"><span>Data layer: Drag and Drop GeoJSON</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-data-quakes" title="Data layer: Earthquakes" data-title="Data layer: Earthquakes"><span>Data layer: Earthquakes</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-heatmap" title="Heatmaps" data-title="Heatmaps"><span>Heatmaps</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-mapsengine" title="Maps Engine layers" data-title="Maps Engine layers"><span>Maps Engine layers</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-dynamicmapsengine" title="Dynamic Maps Engine layers" data-title="Dynamic Maps Engine layers"><span>Dynamic Maps Engine layers</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-fusiontables-simple" title="Fusion Tables layers" data-title="Fusion Tables layers"><span>Fusion Tables layers</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-fusiontables-query" title="Fusion Tables queries" data-title="Fusion Tables queries"><span>Fusion Tables queries</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-fusiontables-heatmap" title="Fusion Tables heatmaps" data-title="Fusion Tables heatmaps"><span>Fusion Tables heatmaps</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-fusiontables-styling" title="Fusion Tables styling" data-title="Fusion Tables styling"><span>Fusion Tables styling</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-georss" title="GeoRSS layers" data-title="GeoRSS layers"><span>GeoRSS layers</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-traffic" title="Traffic layer" data-title="Traffic layer"><span>Traffic layer</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-transit" title="Transit layer" data-title="Transit layer"><span>Transit layer</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-weather" title="Weather layer" data-title="Weather layer"><span>Weather layer</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-bicycling" title="Bicycle layer" data-title="Bicycle layer"><span>Bicycle layer</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-panoramio" title="Panoramio layer" data-title="Panoramio layer"><span>Panoramio layer</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-panoramio-tags" title="Restricting photos by tag (Panoramio layer)" data-title="Restricting photos by tag (Panoramio layer)"><span>Restricting photos by tag (Panoramio layer)</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-panoramio-widget" title="Panoramio Widget API" data-title="Panoramio Widget API"><span>Panoramio Widget API</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="MapTypes">MapTypes</span><ul><li class=""><a href="/maps/documentation/javascript/examples/maptype-base" title="Basic map types" data-title="Basic map types"><span>Basic map types</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/maptype-overlay" title="Overlay map types" data-title="Overlay map types"><span>Overlay map types</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/maptype-image" title="Image map types" data-title="Image map types"><span>Image map types</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/maptype-image-overlay" title="Overlaying an image map type" data-title="Overlaying an image map type"><span>Overlaying an image map type</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/aerial-simple" title="45° imagery" data-title="45° imagery"><span>45° imagery</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/aerial-rotation" title="Rotating 45° imagery" data-title="Rotating 45° imagery"><span>Rotating 45° imagery</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="Services">Services</span><ul><li class=""><a href="/maps/documentation/javascript/examples/geocoding-simple" title="Geocoding service" data-title="Geocoding service"><span>Geocoding service</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/geocoding-reverse" title="Reverse geocoding" data-title="Reverse geocoding"><span>Reverse geocoding</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/geocoding-region-es" title="Region code biasing (ES)" data-title="Region code biasing (ES)"><span>Region code biasing (ES)</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/geocoding-region-us" title="Region code biasing (US)" data-title="Region code biasing (US)"><span>Region code biasing (US)</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/directions-simple" title="Directions service" data-title="Directions service"><span>Directions service</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/directions-panel" title="Displaying text directions with setPanel()" data-title="Displaying text directions with setPanel()"><span>Displaying text directions with setPanel()</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/directions-complex" title="Directions service (complex)" data-title="Directions service (complex)"><span>Directions service (complex)</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/directions-travel-modes" title="Travel modes in directions" data-title="Travel modes in directions"><span>Travel modes in directions</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/directions-waypoints" title="Waypoints in directions" data-title="Waypoints in directions"><span>Waypoints in directions</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/directions-draggable" title="Draggable directions" data-title="Draggable directions"><span>Draggable directions</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/distance-matrix" title="Distance Matrix service" data-title="Distance Matrix service"><span>Distance Matrix service</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/elevation-simple" title="Elevation service" data-title="Elevation service"><span>Elevation service</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/elevation-paths" title="Showing elevation along a path" data-title="Showing elevation along a path"><span>Showing elevation along a path</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/streetview-simple" title="Street View service" data-title="Street View service"><span>Street View service</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/streetview-embed" title="Street View containers" data-title="Street View containers"><span>Street View containers</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/streetview-overlays" title="Overlays within Street View" data-title="Overlays within Street View"><span>Overlays within Street View</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/streetview-events" title="Street View events" data-title="Street View events"><span>Street View events</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/streetview-controls" title="Street View controls" data-title="Street View controls"><span>Street View controls</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/streetview-service" title="Directly accessing Street View data" data-title="Directly accessing Street View data"><span>Directly accessing Street View data</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/streetview-custom-simple" title="Custom Street View panoramas" data-title="Custom Street View panoramas"><span>Custom Street View panoramas</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/streetview-custom-tiles" title="Custom Street View panorama tiles" data-title="Custom Street View panorama tiles"><span>Custom Street View panorama tiles</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/maxzoom-simple" title="Maximum Zoom imagery service" data-title="Maximum Zoom imagery service"><span>Maximum Zoom imagery service</span></a></li></ul></li><li class=""><span class="tlw-title" data-title="Libraries">Libraries</span><ul><li class=""><a href="/maps/documentation/javascript/examples/ads-adunit" title="Adsense: Maps Ad Unit" data-title="Adsense: Maps Ad Unit"><span>Adsense: Maps Ad Unit</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/ads-adunit-format" title="Adsense: Maps Ad Unit formats" data-title="Adsense: Maps Ad Unit formats"><span>Adsense: Maps Ad Unit formats</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/drawing-tools" title="Drawing: Drawing tools" data-title="Drawing: Drawing tools"><span>Drawing: Drawing tools</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/geometry-headings" title="Geometry: Navigation functions (heading)" data-title="Geometry: Navigation functions (heading)"><span>Geometry: Navigation functions (heading)</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/geometry-encodings" title="Geometry: Encoding methods" data-title="Geometry: Encoding methods"><span>Geometry: Encoding methods</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/poly-containsLocation" title="Geometry: containsLocation()" data-title="Geometry: containsLocation()"><span>Geometry: containsLocation()</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-panoramio" title="Panoramio: Panoramio Layer" data-title="Panoramio: Panoramio Layer"><span>Panoramio: Panoramio Layer</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-panoramio-tags" title="Panoramio: Restricting photos by tag (Panoramio layer)" data-title="Panoramio: Restricting photos by tag (Panoramio layer)"><span>Panoramio: Restricting photos by tag (Panoramio layer)</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/layer-panoramio-widget" title="Panoramio: Panoramio Widget API" data-title="Panoramio: Panoramio Widget API"><span>Panoramio: Panoramio Widget API</span></a></li><li class=""><span class="tlw-title" data-title="Places">Places</span><ul><li class=""><a href="/maps/documentation/javascript/examples/place-search" title="Place searches" data-title="Place searches"><span>Place searches</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/place-details" title="Place details" data-title="Place details"><span>Place details</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/place-search-pagination" title="Place search pagination" data-title="Place search pagination"><span>Place search pagination</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/place-radar-search" title="Search for up to 200 places with Radar Search" data-title="Search for up to 200 places with Radar Search"><span>Search for up to 200 places with Radar Search</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/places-autocomplete" title="Place Autocomplete" data-title="Place Autocomplete"><span>Place Autocomplete</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/places-autocomplete-addressform" title="Autocomplete address form" data-title="Autocomplete address form"><span>Autocomplete address form</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/places-autocomplete-hotelsearch" title="Autocomplete hotel search" data-title="Autocomplete hotel search"><span>Autocomplete hotel search</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/places-searchbox" title="Places search box" data-title="Places search box"><span>Places search box</span></a></li><li class=""><a href="/maps/documentation/javascript/examples/places-queryprediction" title="Retrieving autocomplete predictions" data-title="Retrieving autocomplete predictions"><span>Retrieving autocomplete predictions</span></a></li></ul></li><li class=""><a href="/maps/documentation/javascript/examples/layer-weather" title="Weather: Weather Layer" data-title="Weather: Weather Layer"><span>Weather: Weather Layer</span></a></li></ul></li></ul></li><li class=""><span class="tlw-title" data-title="More Resources">More Resources</span><ul><li class=""><a href="/maps/articles" title="Articles" data-title="Articles"><span>Articles</span></a></li><li class=""><a href="http://code.google.com/p/gmaps-api-issues/issues/list?can=2&amp;q=apitype:Javascript3&amp;colspec=ID+Type+Status+Introduced+Fixed+Summary+Internal+Stars&amp;cells=tiles" title="Known Issues" data-title="Known Issues"><span>Known Issues</span></a></li><li class=""><a href="http://code.google.com/p/gmaps-api-issues/wiki/JavascriptMapsAPIv3Changelog" title="Changelog" data-title="Changelog"><span>Changelog</span></a></li><li class=""><a href="http://code.google.com/p/google-maps-utility-library-v3/" title="Utility Library" data-title="Utility Library"><span>Utility Library</span></a></li></ul></li><li class=""><a href="http://googlegeodevelopers.blogspot.com/" title="Blog" data-title="Blog"><span>Blog</span></a></li><li class=""><a href="/maps/support/" title="Support" data-title="Support"><span>Support</span></a></li><li class=""><a href="/maps/faq" title="FAQ" data-title="FAQ"><span>FAQ</span></a></li></ul><hr/><ul><li class=""><span class="tlw-title" data-title="----------">----------</span></li></ul><hr/><ul><li class=""><a href="/maps/documentation/business/guide" title="Google Maps API for Business" data-title="Google Maps API for Business"><span>Google Maps API for Business</span></a></li><li class=""><span class="tlw-title" data-title="Maps API Web Services">Maps API Web Services</span><ul><li class=""><a href="/maps/documentation/webservices" title="Introduction" data-title="Introduction"><span>Introduction</span></a></li><li class=""><a href="/maps/documentation/directions" title="Directions API" data-title="Directions API"><span>Directions API</span></a></li><li class=""><a href="/maps/documentation/distancematrix" title="Distance Matrix API" data-title="Distance Matrix API"><span>Distance Matrix API</span></a></li><li class=""><a href="/maps/documentation/elevation" title="Elevation API" data-title="Elevation API"><span>Elevation API</span></a></li><li class=""><a href="/maps/documentation/geocoding" title="Geocoding API" data-title="Geocoding API"><span>Geocoding API</span></a></li><li class=""><a href="/maps/documentation/timezone" title="Time Zone API" data-title="Time Zone API"><span>Time Zone API</span></a></li></ul></li><li class=""><a href="/places/" title="Google Places API" data-title="Google Places API"><span>Google Places API</span></a></li><li class=""><a href="/maps/documentation/staticmaps/" title="Static Maps API" data-title="Static Maps API"><span>Static Maps API</span></a></li><li class=""><a href="/maps/documentation/streetview/" title="Street View Image API" data-title="Street View Image API"><span>Street View Image API</span></a></li><li class=""><a href="/earth/documentation" title="Earth API" data-title="Earth API"><span>Earth API</span></a></li><li class=""><span class="tlw-title" data-title="Deprecated APIs">Deprecated APIs</span><ul><li class="deprecated"><a href="/maps/documentation/javascript/v2/" title="Maps JavaScript v2" data-title="Maps JavaScript v2"><span>Maps JavaScript v2<sup>Deprecated</sup></span></a></li><li class=""><a href="/maps/documentation/flash/intro" title="Maps API for Flash" data-title="Maps API for Flash"><span>Maps API for Flash</span></a></li></ul></li></ul></nav>
+
+
+
+      </div>
+      
+
+      <div id="gc-content"
+           
+           
+           >
+        
+        <div>
+  
+          
+  
+  <h1 itemprop="name" class="page-title" >Simple Map</h1>
+  
+  <div itemprop="articleBody">
+  
+    
+    <div id="maps-topnav">
+  <div id="maps-topnav-inner">
+    <h3 class="global-home"><a href="/">Developers</a></h3>
+<span class="nav-separator">&rsaquo;</span> 
+<h3 class="global-home"><a href="/maps">Google Maps API</a></h3>
+<span class="nav-separator">&rsaquo;</span>
+
+    <h3 class="global-home"><a href="/maps/web">Web</a></h3>
+    <span class="nav-separator">&rsaquo;</span>
+    <h3 class="global-home active"><a href="/maps/documentation/javascript">Javascript</a></h3>
+    <span class="nav-separator">&rsaquo;</span>
+    <ul>
+      <li ><a href="/maps/documentation/javascript/tutorial">Get Started</a></li>
+      <li class="active"><a href="/maps/documentation/javascript/basics">Documentation</a></li>
+      <li ><a href="/maps/documentation/javascript/reference">Reference</a></li>
+      <li ><a href="/maps/showcase">Showcase</a></li>
+<li ><a href="/maps/support/">Support</a></li>
+<li ><a href="//googlegeodevelopers.blogspot.com">Blog</a></li>
+
+    </ul>
+    <ul id="maps-devsite-nav">
+  <li><a href="/groups">GDG</a></li>
+  <li><a href="/live">Live</a></li>
+</ul>
+
+  </div>
+</div>
+
+    <iframe height="400px" width="100%" frameBorder="0" scrolling="no"
+        src="/maps/documentation/javascript/examples/full/map-simple">
+    </iframe>
+
+    <p>View this example <a href="/maps/documentation/javascript/examples/full/map-simple">full screen</a>.</p>
+
+    <section class="kd-tabbed-horz" id="horzTab">
+      <article class="selected">
+        <header>JavaScript</header>
+        <pre class="prettyprint">var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(-34.397, 150.644)
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</pre>
+      </article>
+      <article>
+        <header>JavaScript + HTML</header>
+        <pre class="prettyprint">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Simple Map&lt;/title&gt;
+    &lt;meta name="viewport" content="initial-scale=1.0, user-scalable=no"&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;style&gt;
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    &lt;/style&gt;
+    &lt;script src="https://maps.googleapis.com/maps/api/js?v=3.exp"&gt;&lt;/script&gt;
+    &lt;script&gt;
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(-34.397, 150.644)
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="map-canvas"&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+      </article>
+    </section>
+
+  
+  </div>
+
+  
+        </div>
+        
+<div id="gc-content-footer">
+
+<div id="gc-content-license">
+
+    
+      
+        <p>Except as otherwise noted, the content of this page is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see our <a href="/site-policies">Site Policies</a>.</p>
+      
+    
+    
+    
+
+</div>
+
+
+
+<div itemprop="datePublished" content="2014-06-24T01:04:02.077450" id="gc-content-last-updated">Last updated June 24, 2014.</div>
+
+</div>
+
+
+      </div>
+  
+
+        
+      </div>
+        
+      
+      
+        
+          
+        
+      
+
+      
+  
+      
+      <div id="gc-footer-container"><!-- START non-redesign footer -->
+        <footer id="gc-footer">
+        <!-- END FOOTER new and non-redesign -->
+        </footer>
+      </div>
+      
+<div id="maia-footer-local" class="footer-local">
+  <div id="footer-top" class="maia-aux">
+    <div class="footer-top-wrap">
+
+      <div class="search-wrap new_left">
+        <div class="dev-wrap new_left">
+          <img src="/_static/images/v2/developers-logo.png" />
+        </div>
+        <form class="search new_left" action="/search/results" method="GET">
+          <div id="searchbox" class="searchbox new_left">
+            <input type="text" name="q" class="q" id="q" value="" placeholder="Search" autocomplete="off">
+          </div>
+          <button id="search-button" class="button button-blue big new_left">
+            <img src="/_static/images/v2/search.png" alt="Search">
+          </button>
+        </form>
+      </div>
+     <div class="plus-wrap new_left">
+        <div class="plus">
+          <!-- Place this tag where you want the widget to render. -->
+          <div class="g-follow" data-annotation="bubble" data-height="24" data-href="https://plus.google.com/101560853443212199687" data-rel="publisher"></div>
+
+          <!-- Place this tag after the last widget tag. -->
+          <script type="text/javascript">
+            (function() {
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/platform.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-list" class="maia-aux">
+    <div class="footer-list-wrap  maia-cols">
+      <div class="maia-col-3">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/products/">Products</a></li>
+          <li><a href="/showcase/">Showcase</a></li>
+          <li><a href="/events/">Events</a></li>
+          <li><a href="/community/">Communities</a></li>
+        </ul>
+      </div>
+      <div class="maia-col-3">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="http://googledevelopers.blogspot.com/">Blog</a></li>
+          <li><a href="https://plus.google.com/+GoogleDevelopers/posts">Google+ Community</a></li>
+          <li><a href="http://www.youtube.com/user/GoogleDevelopers">YouTube Channel</a></li>
+          <li><a class="google-feedback" data-p="81425" data-b="Documentation"  data-v="devsite-20140624-rc02.default" href="">Report an Issue</a></li>
+          <li><a href="/careers/">Jobs</a></li>
+        </ul>
+      </div>
+      <div class="maia-col-3">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="/groups/">Groups</a></li>
+          <li><a href="/experts/">Experts</a></li>
+          <li><a href="/startups/">Startups</a></li>
+          <li><a href="/women-techmakers/">Women Techmakers</a></li>
+        </ul>
+      </div>
+      <div class="maia-col-3">
+        <h4>Top Products</h4>
+        <ul class="top-prod-1 left">
+          <li><a href="/advertise/">Ads</a></li>
+          <li><a href="/analytics/">Analytics</a></li>
+          <li><a href="http://developer.android.com">Android</a></li>
+          <li><a href="/google-apps/">Apps</a></li>
+          <li><a href="/cast/">Cast</a></li>
+          <li><a href="/chrome/">Chrome</a></li>
+        </ul>
+        <ul class="top-prod-2 left">
+          <li><a href="/cloud/">Cloud</a></li>
+          <li><a href="/glass/">Glass</a></li>
+          <li><a href="/+/">Google+</a></li>
+          <li><a href="/maps/">Maps</a></li>
+          <li><a href="/commerce/wallet/">Wallet</a></li>
+          <li><a href="/youtube/">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div><!-- END DIV#MAIA-FOOTER-LOCAL -->
+
+<div id="maia-footer-global" class="footer-global">
+  <div class="maia-aux">
+    <span id="terms">
+      <a href="/site-terms/">Terms of Use</a>
+    </span>
+    <span class="pipe">
+    </span>
+    <span id="privacy">
+      <a href="http://www.google.com/intl/en/privacy/">Privacy Policy</a>
+    </span>
+
+    
+    <div id="gc-language" class="new_right">
+    <ul>
+      <li>
+        <form id="setlang" action="/i18n/setlang/" method="post">
+          <input type='hidden' name='csrfmiddlewaretoken' value='Cd6GNr6DywAYmuUsjRrJA9Xhf8byZhIO' />
+          <select id="footer_language" name="language">
+            <option value="ar"
+                >
+                العربيّة
+              </option><option value="bg"
+                >
+                български
+              </option><option value="ca"
+                >
+                català
+              </option><option value="zh-cn"
+                >
+                简体中文
+              </option><option value="zh-tw"
+                >
+                繁體中文
+              </option><option value="hr"
+                >
+                Hrvatski
+              </option><option value="cs"
+                >
+                česky
+              </option><option value="da"
+                >
+                dansk
+              </option><option value="nl"
+                >
+                Nederlands
+              </option><option value="en"
+                 selected="selected" >
+                English
+              </option><option value="fa"
+                >
+                فارسی
+              </option><option value="fi"
+                >
+                suomi
+              </option><option value="fr"
+                >
+                français
+              </option><option value="de"
+                >
+                Deutsch
+              </option><option value="el"
+                >
+                Ελληνικά
+              </option><option value="he"
+                >
+                עברית
+              </option><option value="hi"
+                >
+                Hindi
+              </option><option value="hu"
+                >
+                Magyar
+              </option><option value="id"
+                >
+                Bahasa Indonesia
+              </option><option value="it"
+                >
+                italiano
+              </option><option value="ja"
+                >
+                日本語
+              </option><option value="ko"
+                >
+                한국어
+              </option><option value="lv"
+                >
+                latviešu
+              </option><option value="lt"
+                >
+                Lithuanian
+              </option><option value="nb"
+                >
+                norsk (bokmål)
+              </option><option value="nn"
+                >
+                norsk (nynorsk)
+              </option><option value="pl"
+                >
+                polski
+              </option><option value="pt-br"
+                >
+                Português Brasileiro
+              </option><option value="pt"
+                >
+                Português
+              </option><option value="ro"
+                >
+                Română
+              </option><option value="ru"
+                >
+                Русский
+              </option><option value="sr"
+                >
+                српски
+              </option><option value="sk"
+                >
+                slovenský
+              </option><option value="sl"
+                >
+                Slovenščina
+              </option><option value="es"
+                >
+                español
+              </option><option value="sv"
+                >
+                svenska
+              </option><option value="th"
+                >
+                Thai
+              </option><option value="tr"
+                >
+                Türkçe
+              </option><option value="uk"
+                >
+                Українська
+              </option><option value="vi"
+                >
+                Vietnamese
+              </option>
+          </select>
+        </form>
+      </li>
+    </ul>
+    </div>
+    
+  </div>
+</div><!-- END DIV#MAIA-FOOTER-GLOBAL -->
+      
+
+
+      
+      
+  
+
+    </div>
+    <div id="needAuth" class="msgDialogContent">
+      
+      <h1>Authentication required</h1>
+      
+      <div>
+        You need to be signed in with <a href='http://www.google.com/+'>Google+</a> to do that.
+      </div>
+      <button>Sign in</button>
+      <button>Cancel</button>
+    </div>
+    <div id="signingIn" class="msgDialogContent">
+      
+      <h1>Signing you in...</h1>
+      <div>
+        
+        Google Developers needs your permission to do that.
+      </div>
+      
+      <button>Try again</button>
+      
+      <button>Cancel</button>
+    </div>
+    <div id="search-autocomplete" class="search-results search-autocomplete" style="display:none"></div>
+    <script type="text/javascript" async="" defer="" src="//www.gstatic.com/feedback/api.js"></script>
+    
+      <script>
+        (function($) {
+          var cssHref = $('#screen-foot').attr('data-href');
+          $('#screen-foot').attr('href', cssHref);
+        })(jQuery);
+      </script>
+    
+    <script id="jqueryui" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script src="/_static/f53fcd3e33/js/script_foot.js"></script>
+    <script>
+      (function($) {
+        devsite.devsite.Init($, null, '',
+            'en', true,
+            'f53fcd3e33');
+      })(jQuery);
+
+      
+      devsite.localInit = function() {
+        
+      };
+    </script>
+    
+    <!-- Google Code for PXL - Developers - Codesite - HP - 90d Remarketing List -->
+    <script type="text/javascript">
+    $('#setlang select').each(function() {
+      if (navigator.userAgent.match(/msie/i)) {
+        $(this).change(function() {
+          $('#setlang').submit();
+        });
+      } else {
+        $(this).kdSelect({'change': function() {
+          $('#setlang').submit();
+        }});
+      }
+    });
+    </script>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 992540712;
+      var google_conversion_language = "en";
+      var google_conversion_format = "3";
+      var google_conversion_color = "ffffff";
+      var google_conversion_label = "qio2CKCPwQMQqPCj2QM";
+      var google_conversion_value = 0;
+      /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+
+    
+
+    
+    
+    <script async="" defer="" src="//survey.g.doubleclick.net/async_survey?site=aclknqcuyds7o"></script>
+    
+
+    
+    <script type="text/javascript">
+    var axel = Math.random() + "";
+    var a = axel * 10000000000000;
+    document.write('<iframe src="https://2507573.fls.doubleclick.net/activityi;src=2507573;type=other026;cat=googl875;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+    </script>
+    <noscript>
+    <iframe src="https://2507573.fls.doubleclick.net/activityi;src=2507573;type=other026;cat=googl875;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+    </noscript>
+    
+
+    <noscript>
+      <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/992540712/?label=qio2CKCPwQMQqPCj2QM&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript>
+    
+
+
+
+<script type="text/javascript" defer>
+
+
+$(document).ready(function() {
+    contentTimer.name = 'content';
+    contentTimer.tick('ol');
+    window.jstiming.report(contentTimer);
+
+    // Boilerplate javascript to enable the plusone button
+    var po = document.createElement('script'); po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js?onload=devsite_plusoneLoaded';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+});
+</script>
+
+
+
+
+  </div><!-- END DIV.MAIA-MAX -->
+  </body>
+
+  
+</html>
